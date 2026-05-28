@@ -105,4 +105,13 @@ public class ToolCommentRepository {
                 commentId
         );
     }
+
+    public void deleteByToolId(Long toolId) {
+        jdbcTemplate.update("""
+                        DELETE FROM tool_comments
+                        WHERE tool_id = ?
+                        """,
+                toolId
+        );
+    }
 }

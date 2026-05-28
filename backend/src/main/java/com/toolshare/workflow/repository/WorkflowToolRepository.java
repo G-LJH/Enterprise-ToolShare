@@ -57,4 +57,16 @@ public class WorkflowToolRepository {
         mappings.forEach(mapping -> result.computeIfAbsent(mapping.workflowId(), ignored -> new ArrayList<>()).add(mapping.toolId()));
         return result;
     }
+
+    public boolean existsByToolId(Long toolId) {
+        Integer count = jdbcTemplate.queryForObject("""
+                        SELECT COUNT(1)
+                        FROM workflow_tools
+                        WHERE tool_id = ?
+                        """,
+                Integer.class,
+                toolId
+        );
+        return count != null && count > 0;
+    }
 }

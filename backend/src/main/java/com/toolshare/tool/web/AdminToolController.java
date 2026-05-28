@@ -6,6 +6,7 @@ import com.toolshare.security.RequireRole;
 import com.toolshare.tool.service.ToolManagementService;
 import com.toolshare.user.repository.RoleRepository;
 import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -53,9 +54,9 @@ public class AdminToolController {
         return ApiResponse.ok(toolManagementService.updateToolByAdmin(toolId, request, CurrentUserHolder.get()));
     }
 
-    @PostMapping("/{toolId}/offline")
-    public ApiResponse<Void> offlineTool(@PathVariable Long toolId) {
-        toolManagementService.offlineTool(toolId, CurrentUserHolder.get());
+    @DeleteMapping("/{toolId}")
+    public ApiResponse<Void> deleteTool(@PathVariable Long toolId) {
+        toolManagementService.deleteTool(toolId, CurrentUserHolder.get());
         return ApiResponse.ok(null);
     }
 }

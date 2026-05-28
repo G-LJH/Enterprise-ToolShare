@@ -49,6 +49,15 @@ public class ToolFavoriteRepository {
         );
     }
 
+    public void deleteByToolId(Long toolId) {
+        jdbcTemplate.update("""
+                        DELETE FROM tool_favorites
+                        WHERE tool_id = ?
+                        """,
+                toolId
+        );
+    }
+
     public List<Long> findFavoriteToolIdsByUserId(Long userId) {
         return jdbcTemplate.query("""
                         SELECT tool_id

@@ -178,15 +178,15 @@ export default function AdminToolsPage() {
     }
   };
 
-  const handleOffline = async (toolId: number) => {
+  const handleDelete = async (toolId: number) => {
     try {
-      await apiRequest<void>(`/api/admin/tools/${toolId}/offline`, {
-        method: 'POST'
+      await apiRequest<void>(`/api/admin/tools/${toolId}`, {
+        method: 'DELETE'
       });
-      message.success('工具已下架');
+      message.success('工具已删除');
       await loadTools();
     } catch (error) {
-      message.error(error instanceof Error ? error.message : '下架工具失败');
+      message.error(error instanceof Error ? error.message : '删除工具失败');
     }
   };
 
@@ -221,59 +221,62 @@ export default function AdminToolsPage() {
       title: '工具名称',
       dataIndex: 'name',
       key: 'name',
-      render: (_, record) => <Link href={`/tools/${record.id}`}>{record.name}</Link>
+      width: 160,
+      render: (_, record) => <Link href={`/tools/${record.id}`} style={{ fontWeight: 600, fontSize: 15 }}>{record.name}</Link>
+    },
+    {
+      title: '摘要',
+      dataIndex: 'summary',
+      key: 'summary',
+      render: (value?: string | null, record) => (
+        <div>
+          <div style={{ color: 'rgba(0,0,0,0.85)', marginBottom: 6, lineHeight: 1.6 }}>
+            {value || '暂无摘要'}
+          </div>
+          <Space size={8} style={{ marginTop: 4 }}>
+            {record.tags.map((tag) => (
+              <Tag key={tag.id} style={{ fontSize: 11, padding: '0 6px', margin: 0 }}>{tag.name}</Tag>
+            ))}
+            <Tag color={statusColor(record.status)} style={{ fontSize: 11, padding: '0 6px', margin: 0 }}>{record.status}</Tag>
+          </Space>
+        </div>
+      )
     },
     {
       title: '推荐人',
       dataIndex: 'recommenderName',
       key: 'recommenderName',
-      width: 140
-    },
-    {
-      title: '标签',
-      key: 'tags',
-      width: 220,
-      render: (_, record) => (
-        <Space wrap>
-          {record.tags.map((tag) => (
-            <Tag key={tag.id}>{tag.name}</Tag>
-          ))}
-        </Space>
-      )
-    },
-    {
-      title: '状态',
-      dataIndex: 'status',
-      key: 'status',
-      width: 150,
-      render: (value: ToolListItem['status']) => <Tag color={statusColor(value)}>{value}</Tag>
+      width: 100,
+      ellipsis: true
     },
     {
       title: '链接',
       dataIndex: 'url',
       key: 'url',
+      width: 200,
+      ellipsis: true,
       render: (value?: string | null) => value ? (
-        <a href={value} target="_blank" rel="noreferrer">
+        <a href={value} target="_blank" rel="noreferrer" style={{ fontSize: 12 }}>
           {value}
         </a>
-      ) : '未提供'
+      ) : <span style={{ fontSize: 12, color: 'rgba(0,0,0,0.45)' }}>未提供</span>
     },
     {
       title: '更新时间',
       dataIndex: 'updatedAt',
       key: 'updatedAt',
-      width: 220,
-      render: (value: string) => new Date(value).toLocaleString('zh-CN')
+      width: 160,
+      render: (value: string) => <span style={{ fontSize: 12, color: 'rgba(0,0,0,0.45)' }}>{new Date(value).toLocaleString('zh-CN')}</span>
     },
     {
       title: '操作',
       key: 'actions',
-      width: 220,
+      width: 180,
       render: (_, record) => (
         <Space wrap>
           <Button size="small" onClick={() => void openEdit(record.id)}>编辑</Button>
-          <Popconfirm title="确认下架此工具？" onConfirm={() => void handleOffline(record.id)}>
-            <Button size="small" danger disabled={record.status === 'OFFLINE'}>下架</Button>
+          <Popconfirm title="确认删除此工具？" onConfirm={() => void handleDelete(record.id)}>
+            <Button size="small" danger>删除</Button>
           </Popconfirm>
         </Space>
       )

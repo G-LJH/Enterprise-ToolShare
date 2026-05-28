@@ -46,4 +46,13 @@ public class ToolStarRepository {
                 userId
         );
     }
+
+    public void deleteByToolId(Long toolId) {
+        jdbcTemplate.update("""
+                        DELETE FROM tool_stars
+                        WHERE tool_id = ?
+                        """,
+                toolId
+        );
+    }
 }

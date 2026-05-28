@@ -194,6 +194,16 @@ public class ToolRepository {
         );
     }
 
+    public void physicalDelete(Long toolId) {
+        jdbcTemplate.update("""
+                        DELETE FROM tools
+                        WHERE id = ?
+                          AND deleted = FALSE
+                        """,
+                toolId
+        );
+    }
+
     public void incrementStarCount(Long toolId) {
         jdbcTemplate.update("""
                         UPDATE tools

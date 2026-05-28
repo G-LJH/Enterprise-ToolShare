@@ -3,6 +3,9 @@ package com.toolshare.tool.service;
 import com.toolshare.exception.BadRequestException;
 import com.toolshare.exception.ConflictException;
 import com.toolshare.exception.NotFoundException;
+import com.toolshare.engagement.repository.ToolCommentRepository;
+import com.toolshare.engagement.repository.ToolFavoriteRepository;
+import com.toolshare.engagement.repository.ToolStarRepository;
 import com.toolshare.engagement.service.ToolEngagementService;
 import com.toolshare.model.AuditLogEntry;
 import com.toolshare.security.CurrentUser;
@@ -19,6 +22,7 @@ import com.toolshare.tool.web.ToolDetailResponse;
 import com.toolshare.tool.web.ToolListItemResponse;
 import com.toolshare.tool.web.ToolUpsertRequest;
 import com.toolshare.review.service.SubmissionStatusPolicy;
+import com.toolshare.workflow.repository.WorkflowToolRepository;
 import com.toolshare.systemconfig.service.SystemConfigService;
 import com.toolshare.user.repository.AuditLogRepository;
 import com.toolshare.user.repository.RoleRepository;
@@ -43,6 +47,10 @@ public class ToolManagementService {
     private final ToolSearchPolicy toolSearchPolicy;
     private final ToolEngagementService toolEngagementService;
     private final SystemConfigService systemConfigService;
+    private final ToolStarRepository toolStarRepository;
+    private final ToolFavoriteRepository toolFavoriteRepository;
+    private final ToolCommentRepository toolCommentRepository;
+    private final WorkflowToolRepository workflowToolRepository;
 
     public ToolManagementService(ToolRepository toolRepository,
                                  ToolSubmissionRepository toolSubmissionRepository,
@@ -53,7 +61,11 @@ public class ToolManagementService {
                                  ToolTagRepository toolTagRepository,
                                  ToolSearchPolicy toolSearchPolicy,
                                  ToolEngagementService toolEngagementService,
-                                 SystemConfigService systemConfigService) {
+                                 SystemConfigService systemConfigService,
+                                 ToolStarRepository toolStarRepository,
+                                 ToolFavoriteRepository toolFavoriteRepository,
+                                 ToolCommentRepository toolCommentRepository,
+                                 WorkflowToolRepository workflowToolRepository) {
         this.toolRepository = toolRepository;
         this.toolSubmissionRepository = toolSubmissionRepository;
         this.toolStatusPolicy = toolStatusPolicy;
@@ -64,6 +76,10 @@ public class ToolManagementService {
         this.toolSearchPolicy = toolSearchPolicy;
         this.toolEngagementService = toolEngagementService;
         this.systemConfigService = systemConfigService;
+        this.toolStarRepository = toolStarRepository;
+        this.toolFavoriteRepository = toolFavoriteRepository;
+        this.toolCommentRepository = toolCommentRepository;
+        this.workflowToolRepository = workflowToolRepository;
     }
 
     public List<ToolListItemResponse> listAdminTools(String keyword, String status, List<Long> tagIds, String sortBy, String sortOrder) {
@@ -193,17 +209,24 @@ public class ToolManagementService {
     }
 
     @Transactional
-    public void offlineTool(Long toolId, CurrentUser operator) {
+    public void deleteTool(Long toolId, CurrentUser operator) {
         ToolRecord existing = getToolOrThrow(toolId);
-        toolStatusPolicy.assertCanOffline(existing.status());
-        toolRepository.updateStatus(toolId, ToolStatusPolicy.OFFLINE, operator.id());
+        if (workflowToolRepository.existsByToolId(toolId)) {
+            throw new ConflictException("该工具已被工作流引用，无法删除，请先调整相关工作流");
+        }
+        toolStarRepository.deleteByToolId(toolId);
+        toolFavoriteRepository.deleteByToolId(toolId);
+        toolCommentRepository.deleteByToolId(toolId);
+        toolSubmissionRepository.deleteByToolId(toolId);
+        toolTagRepository.deleteByToolId(toolId);
+        toolRepository.physicalDelete(toolId);
         auditLogRepository.insert(new AuditLogEntry(
-                "TOOL_OFFLINED",
+                "TOOL_DELETED",
                 "TOOL",
                 String.valueOf(toolId),
                 operator.id(),
                 operator.username(),
-                "offlined tool " + existing.name()
+                "deleted tool " + existing.name()
         ));
     }
 

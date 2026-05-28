@@ -176,4 +176,13 @@ public class ToolSubmissionRepository {
                 submissionId
         );
     }
+
+    public void deleteByToolId(Long toolId) {
+        jdbcTemplate.update("""
+                        DELETE FROM tool_submissions
+                        WHERE tool_id = ?
+                        """,
+                toolId
+        );
+    }
 }

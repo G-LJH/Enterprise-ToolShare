@@ -28,4 +28,8 @@ public class ToolTagRepository {
     public void deleteByTagId(Long tagId) {
         jdbcTemplate.update("DELETE FROM tool_tags WHERE tag_id = ?", tagId);
     }
+
+    public void deleteByToolId(Long toolId) {
+        jdbcTemplate.update("DELETE FROM tool_tags WHERE tool_id = ?", toolId);
+    }
 }

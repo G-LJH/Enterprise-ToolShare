@@ -132,45 +132,40 @@ export default function ToolsPage() {
       title: '工具名称',
       dataIndex: 'name',
       key: 'name',
-      render: (_, record) => <Link href={`/tools/${record.id}`}>{record.name}</Link>
+      width: 160,
+      render: (_, record) => <Link href={`/tools/${record.id}`} style={{ fontWeight: 600, fontSize: 15 }}>{record.name}</Link>
     },
     {
       title: '摘要',
       dataIndex: 'summary',
       key: 'summary',
-      render: (value?: string | null) => value || '暂无摘要'
+      render: (value?: string | null, record) => (
+        <div>
+          <div style={{ color: 'rgba(0,0,0,0.85)', marginBottom: 6, lineHeight: 1.6 }}>
+            {value || '暂无摘要'}
+          </div>
+          <Space size={8} style={{ marginTop: 4 }}>
+            {record.tags.map((tag) => (
+              <Tag key={tag.id} style={{ fontSize: 11, padding: '0 6px', margin: 0 }}>{tag.name}</Tag>
+            ))}
+            <Tag color={statusColor(record.status)} style={{ fontSize: 11, padding: '0 6px', margin: 0 }}>{record.status}</Tag>
+          </Space>
+        </div>
+      )
     },
     {
       title: '推荐人',
       dataIndex: 'recommenderName',
       key: 'recommenderName',
-      width: 140
-    },
-    {
-      title: '标签',
-      key: 'tags',
-      width: 220,
-      render: (_, record) => (
-        <Space wrap>
-          {record.tags.map((tag) => (
-            <Tag key={tag.id}>{tag.name}</Tag>
-          ))}
-        </Space>
-      )
-    },
-    {
-      title: '状态',
-      dataIndex: 'status',
-      key: 'status',
-      width: 160,
-      render: (value: ToolListItem['status']) => <Tag color={statusColor(value)}>{value}</Tag>
+      width: 100,
+      ellipsis: true
     },
     {
       title: '更新时间',
       dataIndex: 'updatedAt',
       key: 'updatedAt',
-      width: 220,
-      render: (value: string) => new Date(value).toLocaleString('zh-CN')
+      width: 160,
+      render: (value: string) => <span style={{ fontSize: 12, color: 'rgba(0,0,0,0.45)' }}>{new Date(value).toLocaleString('zh-CN')}</span>
     }
   ];
 

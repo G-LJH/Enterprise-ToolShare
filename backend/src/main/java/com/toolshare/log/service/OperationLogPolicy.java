@@ -53,8 +53,11 @@ public class OperationLogPolicy {
             return "WORKFLOW_CREATE";
         }
         if (path.startsWith("/api/admin/tools")) {
+            if ("DELETE".equals(method)) {
+                return "TOOL_DELETE";
+            }
             if ("POST".equals(method)) {
-                return path.endsWith("/offline") ? "TOOL_DELETE" : "TOOL_CREATE";
+                return "TOOL_CREATE";
             }
             if ("PUT".equals(method)) {
                 return "TOOL_UPDATE";
@@ -90,7 +93,7 @@ public class OperationLogPolicy {
     }
 
     private boolean isToolMutation(String path, String method) {
-        if ("POST".equalsIgnoreCase(method) && path.endsWith("/offline")) {
+        if ("DELETE".equalsIgnoreCase(method)) {
             return true;
         }
         return "POST".equalsIgnoreCase(method) || "PUT".equalsIgnoreCase(method);

@@ -121,26 +121,26 @@ export default function FavoritesPage() {
         renderItem={(tool) => (
           <List.Item key={tool.id}>
             <Card size="small" style={{ width: '100%', background: '#fffdf7' }}>
-              <Space direction="vertical" size={10} style={{ width: '100%' }}>
+              <Space direction="vertical" size={8} style={{ width: '100%' }}>
                 <Space wrap style={{ justifyContent: 'space-between', width: '100%' }}>
-                  <Space wrap>
-                    <Link href={`/tools/${tool.id}`}>{tool.name}</Link>
-                    <Tag color={toolStatusColor(tool.status)}>{tool.status}</Tag>
-                  </Space>
-                  <Text type="secondary">{new Date(tool.updatedAt).toLocaleString('zh-CN')}</Text>
+                  <Link href={`/tools/${tool.id}`} style={{ fontWeight: 600, fontSize: 15 }}>{tool.name}</Link>
+                  <Text type="secondary" style={{ fontSize: 12 }}>{new Date(tool.updatedAt).toLocaleString('zh-CN')}</Text>
                 </Space>
-                <Text type="secondary">推荐人：{tool.recommenderName}</Text>
-                <Paragraph style={{ marginBottom: 0 }}>
+                <Paragraph style={{ marginBottom: 8, lineHeight: 1.6 }}>
                   {tool.summary || tool.description.slice(0, 120)}
                 </Paragraph>
                 <Space wrap>
                   {tool.tags.map((tag) => (
-                    <Tag key={tag.id}>{tag.name}</Tag>
+                    <Tag key={tag.id} style={{ fontSize: 11, padding: '0 6px', margin: 0 }}>{tag.name}</Tag>
                   ))}
+                  <Tag color={toolStatusColor(tool.status)} style={{ fontSize: 11, padding: '0 6px', margin: 0 }}>{tool.status}</Tag>
+                  <Text type="secondary" style={{ fontSize: 12 }}>
+                    推荐人：{tool.recommenderName}
+                  </Text>
+                  <Text type="secondary" style={{ fontSize: 12 }}>
+                    点赞 {tool.starCount} / 收藏 {tool.favoriteCount} / 评论 {tool.commentCount}
+                  </Text>
                 </Space>
-                <Text type="secondary">
-                  点赞 {tool.starCount} / 收藏 {tool.favoriteCount} / 评论 {tool.commentCount}
-                </Text>
               </Space>
             </Card>
           </List.Item>
