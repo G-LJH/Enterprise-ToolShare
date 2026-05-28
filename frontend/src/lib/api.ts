@@ -23,12 +23,24 @@ export async function apiRequest<T>(path: string, options: RequestOptions = {}):
     headers
   });
 
-  const payload = await response.json();
-  if (!response.ok || payload.status !== 'ok') {
+  const contentType = response.headers.get('content-type') || '';
+  let payload: unknown;
+  if (contentType.includes('application/json')) {
+    payload = await response.json();
+  } else {
+    const text = await response.text();
+    payload = { status: 'error', message: text || `请求失败 (HTTP ${response.status})` };
+  }
+
+  if (!response.ok || (typeof payload === 'object' && payload !== null && 'status' in payload && payload.status !== 'ok')) {
     if (response.status === 401) {
       clearAuthSession();
     }
-    throw new Error(payload.message ?? '请求失败');
+    throw new Error(
+      typeof payload === 'object' && payload !== null && 'message' in payload && typeof payload.message === 'string'
+        ? payload.message
+        : '请求失败'
+    );
   }
-  return payload.data as T;
+  return (payload as { data: T }).data;
 }

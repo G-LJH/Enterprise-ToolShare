@@ -97,13 +97,12 @@ export default function WorkflowDetailPage() {
     try {
       if (workflow.starred) {
         await apiRequest(`/api/workflows/${workflow.id}/stars`, { method: 'DELETE' });
-        setWorkflow({ ...workflow, starred: false, starCount: workflow.starCount - 1 });
-        message.success('已取消点赞');
       } else {
         await apiRequest(`/api/workflows/${workflow.id}/stars`, { method: 'POST' });
-        setWorkflow({ ...workflow, starred: true, starCount: workflow.starCount + 1 });
-        message.success('已点赞');
       }
+      const refreshed = await apiRequest<WorkflowDetail>(`/api/workflows/${workflow.id}`);
+      setWorkflow(refreshed);
+      message.success(workflow.starred ? '已取消点赞' : '已点赞');
     } catch (error) {
       message.error(error instanceof Error ? error.message : '操作失败');
     } finally {
@@ -117,13 +116,12 @@ export default function WorkflowDetailPage() {
     try {
       if (workflow.favorited) {
         await apiRequest(`/api/workflows/${workflow.id}/favorites`, { method: 'DELETE' });
-        setWorkflow({ ...workflow, favorited: false, favoriteCount: workflow.favoriteCount - 1 });
-        message.success('已取消收藏');
       } else {
         await apiRequest(`/api/workflows/${workflow.id}/favorites`, { method: 'POST' });
-        setWorkflow({ ...workflow, favorited: true, favoriteCount: workflow.favoriteCount + 1 });
-        message.success('已收藏');
       }
+      const refreshed = await apiRequest<WorkflowDetail>(`/api/workflows/${workflow.id}`);
+      setWorkflow(refreshed);
+      message.success(workflow.favorited ? '已取消收藏' : '已收藏');
     } catch (error) {
       message.error(error instanceof Error ? error.message : '操作失败');
     } finally {

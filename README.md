@@ -16,8 +16,8 @@
 ### 前置要求
 
 - Docker & Docker Compose
-- Node.js 20+（仅本机开发需要）
-- Java 21 + Maven（仅本机开发需要）
+- Node.js 20+
+- Java 21 + Maven
 
 ### 方式一：Docker Compose（推荐）
 

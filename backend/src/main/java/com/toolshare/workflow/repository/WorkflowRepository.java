@@ -180,7 +180,7 @@ public class WorkflowRepository {
                        w.created_at,
                        w.updated_at
                 FROM workflows w
-                JOIN users u ON u.id = w.creator_id
+                LEFT JOIN users u ON u.id = w.creator_id
                 """;
     }
 

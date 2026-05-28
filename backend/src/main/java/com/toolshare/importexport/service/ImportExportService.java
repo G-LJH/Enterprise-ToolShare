@@ -326,16 +326,12 @@ public class ImportExportService {
     }
 
     private ImportTaskRecord getImportTask(long taskId) {
-        return importTaskRepository.findAll().stream()
-                .filter(task -> task.id().equals(taskId))
-                .findFirst()
+        return importTaskRepository.findById(taskId)
                 .orElseThrow(() -> new BadRequestException("导入任务创建失败"));
     }
 
     private ExportTaskRecord getExportTask(long taskId) {
-        return exportTaskRepository.findAll().stream()
-                .filter(task -> task.id().equals(taskId))
-                .findFirst()
+        return exportTaskRepository.findById(taskId)
                 .orElseThrow(() -> new BadRequestException("导出任务创建失败"));
     }
 

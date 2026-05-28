@@ -1,9 +1,0 @@
-com\toolshare\user\web\UserAdminControllerTests.class
-com\toolshare\auth\service\SessionTokenServiceTests.class
-com\toolshare\ToolShareApplicationTests.class
-com\toolshare\user\service\UserCodeGeneratorTests.class
-com\toolshare\tool\web\ToolControllerTests.class
-com\toolshare\DatabaseMigrationTests.class
-com\toolshare\auth\service\PasswordServiceTests.class
-com\toolshare\auth\web\AuthControllerTests.class
-com\toolshare\tool\service\ToolStatusPolicyTests.class

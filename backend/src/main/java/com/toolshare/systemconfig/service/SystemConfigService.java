@@ -25,11 +25,11 @@ public class SystemConfigService {
     }
 
     public boolean isToolReviewEnabled() {
-        return Boolean.parseBoolean(getConfigValue(TOOL_REVIEW_ENABLED_KEY));
+        return Boolean.parseBoolean(getConfigValueOrDefault(TOOL_REVIEW_ENABLED_KEY, "true"));
     }
 
     public boolean isWorkflowReviewEnabled() {
-        return Boolean.parseBoolean(getConfigValue(WORKFLOW_REVIEW_ENABLED_KEY));
+        return Boolean.parseBoolean(getConfigValueOrDefault(WORKFLOW_REVIEW_ENABLED_KEY, "true"));
     }
 
     public ToolReviewConfigResponse getToolReviewConfig() {
@@ -70,6 +70,12 @@ public class SystemConfigService {
         return systemConfigRepository.findActiveByKey(configKey)
                 .map(SystemConfigRecord -> SystemConfigRecord.configValue() == null ? "" : SystemConfigRecord.configValue().trim())
                 .orElseThrow(() -> new NotFoundException("系统配置不存在"));
+    }
+
+    private String getConfigValueOrDefault(String configKey, String defaultValue) {
+        return systemConfigRepository.findActiveByKey(configKey)
+                .map(SystemConfigRecord -> SystemConfigRecord.configValue() == null ? defaultValue : SystemConfigRecord.configValue().trim())
+                .orElse(defaultValue);
     }
 
     private void ensureConfigExists(String configKey) {

@@ -48,15 +48,19 @@ public class OperationLogRepository {
                 entry.success(),
                 entry.message()
         );
+    }
+
+    public void cleanupOldLogs(int retentionLimit) {
         jdbcTemplate.update("""
                         DELETE FROM operation_logs
                         WHERE id IN (
                             SELECT id
                             FROM operation_logs
                             ORDER BY created_at DESC, id DESC
-                            OFFSET 200
+                            OFFSET ?
                         )
-                        """);
+                        """,
+                retentionLimit);
     }
 
     public List<OperationLogRecord> search(String module, Boolean success, String keyword, int limit, int offset) {

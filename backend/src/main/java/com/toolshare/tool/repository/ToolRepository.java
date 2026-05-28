@@ -313,7 +313,7 @@ public class ToolRepository {
                        t.created_at,
                        t.updated_at
                 FROM tools t
-                JOIN users u ON u.id = t.recommender_id
+                LEFT JOIN users u ON u.id = t.recommender_id
                 """;
     }
 }

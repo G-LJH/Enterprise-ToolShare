@@ -47,6 +47,7 @@ public class RbacBootstrapService implements ApplicationRunner {
 
         Optional<com.toolshare.user.model.UserRecord> existingAdmin = userRepository.findByUsername(DEFAULT_ADMIN_USERNAME);
         long adminId;
+        Long operatorId = null;
         if (existingAdmin.isEmpty()) {
             adminId = userRepository.insert(
                     DEFAULT_ADMIN_USERNAME,
@@ -55,14 +56,15 @@ public class RbacBootstrapService implements ApplicationRunner {
                     "系统管理员",
                     "Admin",
                     "ACTIVE",
-                    0L
+                    null
             );
         } else {
             adminId = existingAdmin.get().id();
+            operatorId = adminId;
         }
 
         if (existingAdmin.map(user -> user.userCode() == null || user.userCode().isBlank()).orElse(true)) {
-            userRepository.updateUserCode(adminId, userCodeGenerator.generate(adminId), 0L);
+            userRepository.updateUserCode(adminId, userCodeGenerator.generate(adminId), operatorId);
         }
 
         Map<Long, List<RoleRecord>> existingRolesByUserId = userRepository.findRolesByUserIds(List.of(adminId));

@@ -75,4 +75,14 @@ public class ImportTaskRepository {
                 ORDER BY created_at DESC, id DESC
                 """, IMPORT_TASK_ROW_MAPPER);
     }
+
+    public java.util.Optional<ImportTaskRecord> findById(Long id) {
+        List<ImportTaskRecord> tasks = jdbcTemplate.query("""
+                SELECT id, task_name, file_path, file_name, status, requester_id, success_count, failure_count, error_report_path, detail, deleted, created_at, updated_at
+                FROM import_tasks
+                WHERE id = ?
+                  AND deleted = FALSE
+                """, IMPORT_TASK_ROW_MAPPER, id);
+        return tasks.stream().findFirst();
+    }
 }

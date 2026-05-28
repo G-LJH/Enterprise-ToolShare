@@ -75,4 +75,14 @@ public class ExportTaskRepository {
                 ORDER BY created_at DESC, id DESC
                 """, EXPORT_TASK_ROW_MAPPER);
     }
+
+    public java.util.Optional<ExportTaskRecord> findById(Long id) {
+        List<ExportTaskRecord> tasks = jdbcTemplate.query("""
+                SELECT id, task_name, file_path, file_name, status, requester_id, success_count, failure_count, error_report_path, detail, deleted, created_at, updated_at
+                FROM export_tasks
+                WHERE id = ?
+                  AND deleted = FALSE
+                """, EXPORT_TASK_ROW_MAPPER, id);
+        return tasks.stream().findFirst();
+    }
 }

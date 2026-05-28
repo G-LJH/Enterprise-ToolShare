@@ -1,5 +1,6 @@
 package com.toolshare.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -13,6 +14,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
     private final AuthenticationRequirementInterceptor authenticationRequirementInterceptor;
     private final RoleAuthorizationInterceptor roleAuthorizationInterceptor;
     private final OperationLogInterceptor operationLogInterceptor;
+
+    @Value("${app.cors.allowed-origins:http://localhost:3000}")
+    private String corsAllowedOrigins;
 
     public WebMvcConfig(AuthenticationInterceptor authenticationInterceptor,
                         RequestUserInterceptor requestUserInterceptor,
@@ -38,7 +42,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
-                .allowedOrigins("http://localhost:3000")
+                .allowedOrigins(corsAllowedOrigins.split(","))
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*");
     }
