@@ -1,0 +1,189 @@
+html,
+body,
+#__next {
+  min-height: 100%;
+}
+
+:root {
+  --page-bg: linear-gradient(180deg, #eef3f1 0%, #f7f6ef 100%);
+  --surface: #fbfcf8;
+  --surface-strong: #ffffff;
+  --line: rgba(24, 49, 83, 0.09);
+  --ink: #183153;
+  --muted: #64748b;
+  --accent: #174b63;
+  --accent-soft: #e8f1f4;
+  --hero-dark: #12304f;
+  --hero-gold: #d8ab57;
+  --ok: #1d6b57;
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir Next", "PingFang SC", "Hiragino Sans GB", sans-serif;
+  background: #f7f4ea;
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.shell-header-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.shell-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+
+.page-hero {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(247, 249, 244, 0.9));
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: 0 18px 60px rgba(24, 49, 83, 0.08);
+}
+
+.dashboard-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 12px 36px rgba(24, 49, 83, 0.05);
+}
+
+.portal-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 24px;
+  background: rgba(247, 249, 244, 0.9);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+}
+
+.portal-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.portal-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.portal-nav-link {
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.portal-nav-link:hover {
+  color: var(--ink);
+  background: rgba(23, 75, 99, 0.08);
+}
+
+.portal-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background:
+    radial-gradient(circle at top right, rgba(216, 171, 87, 0.28), transparent 26%),
+    radial-gradient(circle at left bottom, rgba(112, 171, 185, 0.16), transparent 32%),
+    linear-gradient(145deg, #12304f 0%, #1e4467 56%, #28597b 100%);
+  color: #f8faf6;
+  box-shadow: 0 34px 90px rgba(18, 48, 79, 0.24);
+}
+
+.portal-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto -80px -120px auto;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.portal-stat {
+  border-radius: 22px;
+  padding: 18px 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.portal-grid-card {
+  height: 100%;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: 0 16px 42px rgba(24, 49, 83, 0.06);
+}
+
+.portal-grid-card .ant-card-body {
+  padding: 24px;
+}
+
+.login-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(216, 171, 87, 0.18), transparent 26%),
+    linear-gradient(135deg, #102a45 0%, #1d476e 45%, #eef2e8 100%);
+}
+
+.login-panel {
+  width: 100%;
+  max-width: 1080px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+}
+
+.login-hero-card {
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(14, 38, 62, 0.78);
+  box-shadow: 0 28px 80px rgba(10, 27, 44, 0.28);
+  color: #f8faf6;
+}
+
+.login-form-card {
+  border-radius: 28px;
+  box-shadow: 0 26px 70px rgba(24, 49, 83, 0.16);
+}
+
+.login-metric {
+  border-radius: 18px;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 900px) {
+  .shell-header-top,
+  .portal-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .login-panel {
+    grid-template-columns: 1fr;
+  }
+}

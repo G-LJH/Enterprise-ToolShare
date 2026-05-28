@@ -1,0 +1,10 @@
+[31;1mjdbc:postgresql://localhost:5432/tool_share: [31;1mThe term 'jdbc:postgresql://localhost:5432/tool_share' is not recognized as a name of a cmdlet, function, script file, or executable program.[0m
+[31;1m[31;1mCheck the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+[31;1mpostgres: [31;1mThe term 'postgres' is not recognized as a name of a cmdlet, function, script file, or executable program.[0m
+[31;1m[31;1mCheck the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+[31;1mToolShare@2026!Secure: [31;1mThe term 'ToolShare@2026!Secure' is not recognized as a name of a cmdlet, function, script file, or executable program.[0m
+[31;1m[31;1mCheck the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+[31;1morg.postgresql.Driver: [31;1mThe term 'org.postgresql.Driver' is not recognized as a name of a cmdlet, function, script file, or executable program.[0m
+[31;1m[31;1mCheck the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+[31;1mF:\tool: [31;1mThe term 'F:\tool' is not recognized as a name of a cmdlet, function, script file, or executable program.[0m
+[31;1m[31;1mCheck the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m

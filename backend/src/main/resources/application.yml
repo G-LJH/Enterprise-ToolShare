@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: tool-share-backend
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/tool_share}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:postgres}
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER_CLASS_NAME:org.postgresql.Driver}
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    placeholder-replacement: true
+
+logging:
+  file:
+    name: ${LOGGING_FILE_NAME:${user.dir}/backend.log}
+  level:
+    root: INFO
+
+space:
+  auth:
+    session-ttl-hours: 12
+    login-fail-max-attempts: 5
+    login-lock-minutes: 15

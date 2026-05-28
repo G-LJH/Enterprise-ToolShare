@@ -1,0 +1,1439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.toolshare.M11AcceptanceIntegrationTests" time="0.373" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="socksProxyHost" value="127.0.0.1"/>
+    <property name="http.proxyHost" value="127.0.0.1"/>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/ljh/Documents/tool share/backend/target/test-classes:/Users/ljh/Documents/tool share/backend/target/classes:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.3.2/spring-boot-starter-web-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter/3.3.2/spring-boot-starter-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot/3.3.2/spring-boot-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.3.2/spring-boot-autoconfigure-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.3.2/spring-boot-starter-logging-3.3.2.jar:/Users/ljh/.m2/repository/ch/qos/logback/logback-classic/1.5.6/logback-classic-1.5.6.jar:/Users/ljh/.m2/repository/ch/qos/logback/logback-core/1.5.6/logback-core-1.5.6.jar:/Users/ljh/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.23.1/log4j-to-slf4j-2.23.1.jar:/Users/ljh/.m2/repository/org/apache/logging/log4j/log4j-api/2.23.1/log4j-api-2.23.1.jar:/Users/ljh/.m2/repository/org/slf4j/jul-to-slf4j/2.0.13/jul-to-slf4j-2.0.13.jar:/Users/ljh/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/ljh/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.3.2/spring-boot-starter-json-3.3.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.17.2/jackson-datatype-jdk8-2.17.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.17.2/jackson-datatype-jsr310-2.17.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.17.2/jackson-module-parameter-names-2.17.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.3.2/spring-boot-starter-tomcat-3.3.2.jar:/Users/ljh/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.26/tomcat-embed-core-10.1.26.jar:/Users/ljh/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.26/tomcat-embed-websocket-10.1.26.jar:/Users/ljh/.m2/repository/org/springframework/spring-web/6.1.11/spring-web-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-beans/6.1.11/spring-beans-6.1.11.jar:/Users/ljh/.m2/repository/io/micrometer/micrometer-observation/1.13.2/micrometer-observation-1.13.2.jar:/Users/ljh/.m2/repository/io/micrometer/micrometer-commons/1.13.2/micrometer-commons-1.13.2.jar:/Users/ljh/.m2/repository/org/springframework/spring-webmvc/6.1.11/spring-webmvc-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-aop/6.1.11/spring-aop-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-context/6.1.11/spring-context-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-expression/6.1.11/spring-expression-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.3.2/spring-boot-starter-validation-3.3.2.jar:/Users/ljh/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.26/tomcat-embed-el-10.1.26.jar:/Users/ljh/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar:/Users/ljh/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/ljh/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar:/Users/ljh/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.3.2/spring-boot-starter-jdbc-3.3.2.jar:/Users/ljh/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar:/Users/ljh/.m2/repository/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar:/Users/ljh/.m2/repository/org/springframework/spring-jdbc/6.1.11/spring-jdbc-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-tx/6.1.11/spring-tx-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/security/spring-security-crypto/6.3.1/spring-security-crypto-6.3.1.jar:/Users/ljh/.m2/repository/org/flywaydb/flyway-core/10.10.0/flyway-core-10.10.0.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.17.2/jackson-dataformat-toml-2.17.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar:/Users/ljh/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/Users/ljh/.m2/repository/org/postgresql/postgresql/42.7.3/postgresql-42.7.3.jar:/Users/ljh/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/Users/ljh/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.3.2/spring-boot-starter-test-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-test/3.3.2/spring-boot-test-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.3.2/spring-boot-test-autoconfigure-3.3.2.jar:/Users/ljh/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/Users/ljh/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/Users/ljh/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/Users/ljh/.m2/repository/net/minidev/json-smart/2.5.1/json-smart-2.5.1.jar:/Users/ljh/.m2/repository/net/minidev/accessors-smart/2.5.1/accessors-smart-2.5.1.jar:/Users/ljh/.m2/repository/org/ow2/asm/asm/9.6/asm-9.6.jar:/Users/ljh/.m2/repository/org/assertj/assertj-core/3.25.3/assertj-core-3.25.3.jar:/Users/ljh/.m2/repository/net/bytebuddy/byte-buddy/1.14.18/byte-buddy-1.14.18.jar:/Users/ljh/.m2/repository/org/awaitility/awaitility/4.2.1/awaitility-4.2.1.jar:/Users/ljh/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/ljh/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.3/junit-jupiter-5.10.3.jar:/Users/ljh/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.3/junit-jupiter-api-5.10.3.jar:/Users/ljh/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/ljh/.m2/repository/org/junit/platform/junit-platform-commons/1.10.3/junit-platform-commons-1.10.3.jar:/Users/ljh/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/ljh/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.3/junit-jupiter-params-5.10.3.jar:/Users/ljh/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.3/junit-jupiter-engine-5.10.3.jar:/Users/ljh/.m2/repository/org/junit/platform/junit-platform-engine/1.10.3/junit-platform-engine-1.10.3.jar:/Users/ljh/.m2/repository/org/mockito/mockito-core/5.11.0/mockito-core-5.11.0.jar:/Users/ljh/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.18/byte-buddy-agent-1.14.18.jar:/Users/ljh/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/ljh/.m2/repository/org/mockito/mockito-junit-jupiter/5.11.0/mockito-junit-jupiter-5.11.0.jar:/Users/ljh/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/Users/ljh/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/ljh/.m2/repository/org/springframework/spring-core/6.1.11/spring-core-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-jcl/6.1.11/spring-jcl-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-test/6.1.11/spring-test-6.1.11.jar:/Users/ljh/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:"/>
+    <property name="https.proxyPort" value="7897"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/ljh/Documents/tool share/backend/target/surefire/surefirebooter-20260527001831024_3.jar /Users/ljh/Documents/tool share/backend/target/surefire 2026-05-27T00-18-30_928-jvmRun1 surefire-20260527001831024_1tmp surefire_0-20260527001831024_2tmp"/>
+    <property name="http.nonProxyHosts" value="127.0.0.1|192.168.0.0/16|*.192.168.0.0/16|10.0.0.0/8|*.10.0.0.0/8|172.16.0.0/12|*.172.16.0.0/12|172.29.0.0/16|*.172.29.0.0/16|localhost|*.localhost|local|*.local|crashlytics.com|*.crashlytics.com|&lt;local&gt;|*.&lt;local&gt;"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/ljh/Documents/tool share/backend/target/test-classes:/Users/ljh/Documents/tool share/backend/target/classes:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.3.2/spring-boot-starter-web-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter/3.3.2/spring-boot-starter-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot/3.3.2/spring-boot-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.3.2/spring-boot-autoconfigure-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.3.2/spring-boot-starter-logging-3.3.2.jar:/Users/ljh/.m2/repository/ch/qos/logback/logback-classic/1.5.6/logback-classic-1.5.6.jar:/Users/ljh/.m2/repository/ch/qos/logback/logback-core/1.5.6/logback-core-1.5.6.jar:/Users/ljh/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.23.1/log4j-to-slf4j-2.23.1.jar:/Users/ljh/.m2/repository/org/apache/logging/log4j/log4j-api/2.23.1/log4j-api-2.23.1.jar:/Users/ljh/.m2/repository/org/slf4j/jul-to-slf4j/2.0.13/jul-to-slf4j-2.0.13.jar:/Users/ljh/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/ljh/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.3.2/spring-boot-starter-json-3.3.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.17.2/jackson-datatype-jdk8-2.17.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.17.2/jackson-datatype-jsr310-2.17.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.17.2/jackson-module-parameter-names-2.17.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.3.2/spring-boot-starter-tomcat-3.3.2.jar:/Users/ljh/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.26/tomcat-embed-core-10.1.26.jar:/Users/ljh/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.26/tomcat-embed-websocket-10.1.26.jar:/Users/ljh/.m2/repository/org/springframework/spring-web/6.1.11/spring-web-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-beans/6.1.11/spring-beans-6.1.11.jar:/Users/ljh/.m2/repository/io/micrometer/micrometer-observation/1.13.2/micrometer-observation-1.13.2.jar:/Users/ljh/.m2/repository/io/micrometer/micrometer-commons/1.13.2/micrometer-commons-1.13.2.jar:/Users/ljh/.m2/repository/org/springframework/spring-webmvc/6.1.11/spring-webmvc-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-aop/6.1.11/spring-aop-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-context/6.1.11/spring-context-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-expression/6.1.11/spring-expression-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.3.2/spring-boot-starter-validation-3.3.2.jar:/Users/ljh/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.26/tomcat-embed-el-10.1.26.jar:/Users/ljh/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar:/Users/ljh/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/ljh/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar:/Users/ljh/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.3.2/spring-boot-starter-jdbc-3.3.2.jar:/Users/ljh/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar:/Users/ljh/.m2/repository/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar:/Users/ljh/.m2/repository/org/springframework/spring-jdbc/6.1.11/spring-jdbc-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-tx/6.1.11/spring-tx-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/security/spring-security-crypto/6.3.1/spring-security-crypto-6.3.1.jar:/Users/ljh/.m2/repository/org/flywaydb/flyway-core/10.10.0/flyway-core-10.10.0.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.17.2/jackson-dataformat-toml-2.17.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar:/Users/ljh/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/Users/ljh/.m2/repository/org/postgresql/postgresql/42.7.3/postgresql-42.7.3.jar:/Users/ljh/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/Users/ljh/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.3.2/spring-boot-starter-test-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-test/3.3.2/spring-boot-test-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.3.2/spring-boot-test-autoconfigure-3.3.2.jar:/Users/ljh/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/Users/ljh/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/Users/ljh/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/Users/ljh/.m2/repository/net/minidev/json-smart/2.5.1/json-smart-2.5.1.jar:/Users/ljh/.m2/repository/net/minidev/accessors-smart/2.5.1/accessors-smart-2.5.1.jar:/Users/ljh/.m2/repository/org/ow2/asm/asm/9.6/asm-9.6.jar:/Users/ljh/.m2/repository/org/assertj/assertj-core/3.25.3/assertj-core-3.25.3.jar:/Users/ljh/.m2/repository/net/bytebuddy/byte-buddy/1.14.18/byte-buddy-1.14.18.jar:/Users/ljh/.m2/repository/org/awaitility/awaitility/4.2.1/awaitility-4.2.1.jar:/Users/ljh/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/ljh/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.3/junit-jupiter-5.10.3.jar:/Users/ljh/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.3/junit-jupiter-api-5.10.3.jar:/Users/ljh/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/ljh/.m2/repository/org/junit/platform/junit-platform-commons/1.10.3/junit-platform-commons-1.10.3.jar:/Users/ljh/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/ljh/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.3/junit-jupiter-params-5.10.3.jar:/Users/ljh/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.3/junit-jupiter-engine-5.10.3.jar:/Users/ljh/.m2/repository/org/junit/platform/junit-platform-engine/1.10.3/junit-platform-engine-1.10.3.jar:/Users/ljh/.m2/repository/org/mockito/mockito-core/5.11.0/mockito-core-5.11.0.jar:/Users/ljh/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.18/byte-buddy-agent-1.14.18.jar:/Users/ljh/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/ljh/.m2/repository/org/mockito/mockito-junit-jupiter/5.11.0/mockito-junit-jupiter-5.11.0.jar:/Users/ljh/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/Users/ljh/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/ljh/.m2/repository/org/springframework/spring-core/6.1.11/spring-core-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-jcl/6.1.11/spring-jcl-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-test/6.1.11/spring-test-6.1.11.jar:/Users/ljh/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/ljh"/>
+    <property name="user.language" value="zh"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-04-21"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="https.proxyHost" value="127.0.0.1"/>
+    <property name="basedir" value="/Users/ljh/Documents/tool share/backend"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/ljh/Documents/tool share/backend/target/surefire/surefirebooter-20260527001831024_3.jar"/>
+    <property name="user.script" value="Hans"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="127.0.0.1|192.168.0.0/16|*.192.168.0.0/16|10.0.0.0/8|*.10.0.0.0/8|172.16.0.0/12|*.172.16.0.0/12|172.29.0.0/16|*.172.29.0.0/16|localhost|*.localhost|local|*.local|crashlytics.com|*.crashlytics.com|&lt;local&gt;|*.&lt;local&gt;"/>
+    <property name="java.runtime.version" value="21.0.11+9-LTS-211"/>
+    <property name="user.name" value="ljh"/>
+    <property name="stdout.encoding" value="US-ASCII"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="13.4.1"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/ljh/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/rp/548l_1791s739ttzt9_s4qfm0000gn/T/"/>
+    <property name="com.zaxxer.hikari.pool_number" value="2"/>
+    <property name="java.version" value="21.0.11"/>
+    <property name="user.dir" value="/Users/ljh/Documents/tool share/backend"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="socksProxyPort" value="7897"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="56753"/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="US-ASCII"/>
+    <property name="java.library.path" value="/Users/ljh/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="US-ASCII"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="21.0.11+9-LTS-211"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="127.0.0.1|192.168.0.0/16|*.192.168.0.0/16|10.0.0.0/8|*.10.0.0.0/8|172.16.0.0/12|*.172.16.0.0/12|172.29.0.0/16|*.172.29.0.0/16|localhost|*.localhost|local|*.local|crashlytics.com|*.crashlytics.com|&lt;local&gt;|*.&lt;local&gt;"/>
+    <property name="java.class.version" value="65.0"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[tool-share-backend] "/>
+    <property name="http.proxyPort" value="7897"/>
+  </properties>
+  <testcase name="shouldPassCoreCrossModuleAcceptanceFlow" classname="com.toolshare.M11AcceptanceIntegrationTests" time="0.367">
+    <system-out><![CDATA[2026-05-27T00:18:40.481+08:00 DEBUG 56753 --- [tool-share-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [M11AcceptanceIntegrationTests]: using SpringBootContextLoader
+2026-05-27T00:18:40.482+08:00  INFO 56753 --- [tool-share-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.toolshare.M11AcceptanceIntegrationTests]: M11AcceptanceIntegrationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-27T00:18:40.482+08:00 DEBUG 56753 --- [tool-share-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Using ContextCustomizerFactory implementations for test class [M11AcceptanceIntegrationTests]: [ImportsContextCustomizerFactory, ExcludeFilterContextCustomizerFactory, HttpGraphQlTesterContextCustomizerFactory, DuplicateJsonObjectContextCustomizerFactory, MockitoContextCustomizerFactory, TestRestTemplateContextCustomizerFactory, WebTestClientContextCustomizerFactory, DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory, OverrideAutoConfigurationContextCustomizerFactory, ObservabilityContextCustomizerFactory, TypeExcludeFiltersContextCustomizerFactory, PropertyMappingContextCustomizerFactory, WebDriverContextCustomizerFactory, MockServerContainerContextCustomizerFactory, DynamicPropertiesContextCustomizerFactory]
+2026-05-27T00:18:40.483+08:00 DEBUG 56753 --- [tool-share-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Using ContextCustomizers for test class [M11AcceptanceIntegrationTests]: [ImportsContextCustomizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer, DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer, DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, WebDriverContextCustomizer]
+2026-05-27T00:18:40.483+08:00  INFO 56753 --- [tool-share-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.toolshare.ToolShareApplication for test class com.toolshare.M11AcceptanceIntegrationTests
+2026-05-27T00:18:40.484+08:00 DEBUG 56753 --- [tool-share-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners for test class [M11AcceptanceIntegrationTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, ResetMocksTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener]
+2026-05-27T00:18:40.486+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.486+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id FROM roles WHERE code = ?]
+2026-05-27T00:18:40.561+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.561+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO users (username, email, password_hash, real_name, nickname, status, user_code, created_by, updated_by)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+]
+2026-05-27T00:18:40.562+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.562+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id FROM users WHERE username = ?]
+2026-05-27T00:18:40.562+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.562+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO user_roles (user_id, role_id) VALUES (?, ?)]
+2026-05-27T00:18:40.563+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.auth.web.AuthController#login(AuthLoginRequest)
+2026-05-27T00:18:40.563+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AuthLoginRequest[username=admin, password=Admin@123456]]
+2026-05-27T00:18:40.563+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.563+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE username = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.564+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.564+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT COUNT(*)
+FROM users
+WHERE id = ?
+  AND login_locked_until IS NOT NULL
+  AND login_locked_until > ?
+]
+2026-05-27T00:18:40.632+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.632+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE users
+SET login_fail_count = 0,
+    login_locked_until = NULL,
+    last_login_at = ?,
+    updated_at = NOW()
+WHERE id = ?
+]
+2026-05-27T00:18:40.632+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.632+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO auth_sessions (user_id, token_hash, expires_at)
+VALUES (?, ?, ?)
+]
+2026-05-27T00:18:40.632+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.632+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id FROM auth_sessions WHERE token_hash = ?]
+2026-05-27T00:18:40.632+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.633+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.633+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.633+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:40.633+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.633+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO audit_logs (action, object_type, object_id, operator_id, operator_name, detail)
+VALUES (?, ?, ?, ?, ?, ?)
+]
+2026-05-27T00:18:40.633+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:40.634+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=AuthLoginResponse[accessToken=Rr7oQX753YoYnIRX3_Mtgv5zOrOtqM6_OTM9mtzLs0 (truncated)...]
+2026-05-27T00:18:40.634+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.auth.web.AuthController#login(AuthLoginRequest)
+2026-05-27T00:18:40.635+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AuthLoginRequest[username=accept-user, password=Accept@123456]]
+2026-05-27T00:18:40.635+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.635+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE username = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.635+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.635+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT COUNT(*)
+FROM users
+WHERE id = ?
+  AND login_locked_until IS NOT NULL
+  AND login_locked_until > ?
+]
+2026-05-27T00:18:40.701+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.701+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE users
+SET login_fail_count = 0,
+    login_locked_until = NULL,
+    last_login_at = ?,
+    updated_at = NOW()
+WHERE id = ?
+]
+2026-05-27T00:18:40.701+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.701+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO auth_sessions (user_id, token_hash, expires_at)
+VALUES (?, ?, ?)
+]
+2026-05-27T00:18:40.701+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.701+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id FROM auth_sessions WHERE token_hash = ?]
+2026-05-27T00:18:40.701+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.701+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.701+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.701+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:40.702+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.702+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO audit_logs (action, object_type, object_id, operator_id, operator_name, detail)
+VALUES (?, ?, ?, ?, ?, ?)
+]
+2026-05-27T00:18:40.702+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:40.702+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=AuthLoginResponse[accessToken=hw0RmcAIdM5pdJEPVE1LqcyWDSfExg97MvtJ67cAHg (truncated)...]
+2026-05-27T00:18:40.703+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.review.web.AdminToolReviewController#updateToolReviewConfig(ToolReviewConfigUpdateRequest)
+2026-05-27T00:18:40.703+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.703+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_id, token_hash, expires_at, last_accessed_at, revoked_at, created_at
+FROM auth_sessions
+WHERE token_hash = ?
+  AND revoked_at IS NULL
+  AND expires_at > ?
+]
+2026-05-27T00:18:40.703+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.703+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE auth_sessions
+SET last_accessed_at = NOW()
+WHERE id = ?
+]
+2026-05-27T00:18:40.704+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.704+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.704+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.704+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:40.704+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ToolReviewConfigUpdateRequest[toolReviewEnabled=true]]
+2026-05-27T00:18:40.704+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.704+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, config_key, config_value, description, deleted, created_at, updated_at
+FROM system_configs
+WHERE config_key = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.704+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.704+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE system_configs
+SET config_value = ?, updated_by = ?, updated_at = NOW()
+WHERE config_key = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.705+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.705+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO audit_logs (action, object_type, object_id, operator_id, operator_name, detail)
+VALUES (?, ?, ?, ?, ?, ?)
+]
+2026-05-27T00:18:40.705+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:40.705+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=ToolReviewConfigResponse[toolReviewEnabled=true], message=success]]
+2026-05-27T00:18:40.706+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.tag.web.TagAdminController#createTag(TagUpsertRequest)
+2026-05-27T00:18:40.706+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.706+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_id, token_hash, expires_at, last_accessed_at, revoked_at, created_at
+FROM auth_sessions
+WHERE token_hash = ?
+  AND revoked_at IS NULL
+  AND expires_at > ?
+]
+2026-05-27T00:18:40.706+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.706+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE auth_sessions
+SET last_accessed_at = NOW()
+WHERE id = ?
+]
+2026-05-27T00:18:40.706+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.706+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.706+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.706+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:40.708+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [TagUpsertRequest[name=M11 集成标签, description=M11 验收使用标签]]
+2026-05-27T00:18:40.710+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.711+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, name, description, deleted, created_at, updated_at
+FROM tags
+WHERE LOWER(name) = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.712+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2026-05-27T00:18:40.712+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement
+2026-05-27T00:18:40.713+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.713+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO audit_logs (action, object_type, object_id, operator_id, operator_name, detail)
+VALUES (?, ?, ?, ?, ?, ?)
+]
+2026-05-27T00:18:40.713+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.713+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, name, description, deleted, created_at, updated_at
+FROM tags
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.714+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:40.714+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=TagResponse[id=2, name=M11 集成标签, description=M11 验收使用标签, createdAt=2026- (truncated)...]
+2026-05-27T00:18:40.716+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.tool.web.ToolController#submitTool(ToolUpsertRequest)
+2026-05-27T00:18:40.716+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.716+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_id, token_hash, expires_at, last_accessed_at, revoked_at, created_at
+FROM auth_sessions
+WHERE token_hash = ?
+  AND revoked_at IS NULL
+  AND expires_at > ?
+]
+2026-05-27T00:18:40.717+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.717+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE auth_sessions
+SET last_accessed_at = NOW()
+WHERE id = ?
+]
+2026-05-27T00:18:40.717+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.717+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.717+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.717+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:40.719+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ToolUpsertRequest[name=M11 Acceptance Tool, summary=M11 summary, description=M11 description, url=ht (truncated)...]
+2026-05-27T00:18:40.734+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.734+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, name, description, deleted, created_at, updated_at
+FROM tags
+WHERE deleted = FALSE
+  AND id IN (?)
+ORDER BY name ASC, id ASC
+]
+2026-05-27T00:18:40.734+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.735+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT t.id,
+       t.name,
+       t.summary,
+       t.description,
+       t.url,
+       t.usage_guide,
+       t.recommender_id,
+       u.real_name AS recommender_name,
+       t.status,
+       t.star_count,
+       t.favorite_count,
+       t.comment_count,
+       t.deleted,
+       t.created_at,
+       t.updated_at
+FROM tools t
+JOIN users u ON u.id = t.recommender_id
+WHERE t.deleted = FALSE
+  AND t.status <> 'REJECTED'
+  AND (
+    LOWER(t.name) = ?
+ OR LOWER(t.url) = ?)]
+2026-05-27T00:18:40.735+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.735+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, config_key, config_value, description, deleted, created_at, updated_at
+FROM system_configs
+WHERE config_key = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.735+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2026-05-27T00:18:40.735+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement
+2026-05-27T00:18:40.736+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.736+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [DELETE FROM tool_tags WHERE tool_id = ?]
+2026-05-27T00:18:40.736+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.736+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO tool_tags (tool_id, tag_id)
+VALUES (?, ?)
+]
+2026-05-27T00:18:40.738+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2026-05-27T00:18:40.738+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement
+2026-05-27T00:18:40.738+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.738+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO audit_logs (action, object_type, object_id, operator_id, operator_name, detail)
+VALUES (?, ?, ?, ?, ?, ?)
+]
+2026-05-27T00:18:40.738+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.738+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT t.id,
+       t.name,
+       t.summary,
+       t.description,
+       t.url,
+       t.usage_guide,
+       t.recommender_id,
+       u.real_name AS recommender_name,
+       t.status,
+       t.star_count,
+       t.favorite_count,
+       t.comment_count,
+       t.deleted,
+       t.created_at,
+       t.updated_at
+FROM tools t
+JOIN users u ON u.id = t.recommender_id
+WHERE t.id = ?
+  AND t.deleted = FALSE
+]
+2026-05-27T00:18:40.739+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.739+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ts.id,
+       ts.tool_id,
+       ts.submitter_id,
+       u.real_name AS submitter_name,
+       ts.status,
+       ts.remark,
+       ts.deleted,
+       ts.created_at,
+       ts.updated_at
+FROM tool_submissions ts
+JOIN users u ON u.id = ts.submitter_id
+WHERE ts.tool_id = ?
+  AND ts.deleted = FALSE
+ORDER BY ts.created_at DESC, ts.id DESC
+LIMIT 1
+]
+2026-05-27T00:18:40.739+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.739+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT tt.tool_id, t.id, t.name, t.description, t.deleted, t.created_at, t.updated_at
+FROM tool_tags tt
+JOIN tags t ON t.id = tt.tag_id
+WHERE tt.tool_id IN (?)
+  AND t.deleted = FALSE
+ORDER BY tt.tool_id ASC, t.name ASC, t.id ASC
+]
+2026-05-27T00:18:40.739+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.739+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT COUNT(*)
+FROM tool_stars
+WHERE tool_id = ?
+  AND user_id = ?
+]
+2026-05-27T00:18:40.740+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.740+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT COUNT(*)
+FROM tool_favorites
+WHERE tool_id = ?
+  AND user_id = ?
+]
+2026-05-27T00:18:40.740+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:40.741+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=ToolDetailResponse[id=13, name=M11 Acceptance Tool, summary=M11 summary, (truncated)...]
+2026-05-27T00:18:40.742+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.742+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO operation_logs (operation, module, user_id, success, message)
+VALUES (?, ?, ?, ?, ?)
+]
+2026-05-27T00:18:40.742+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL update [DELETE FROM operation_logs
+WHERE id IN (
+    SELECT id
+    FROM operation_logs
+    ORDER BY created_at DESC, id DESC
+    OFFSET 200
+)
+]
+2026-05-27T00:18:40.743+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.743+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id FROM tool_submissions WHERE tool_id = ?]
+2026-05-27T00:18:40.744+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.review.web.AdminToolReviewController#approveReview(Long, ReviewDecisionRequest)
+2026-05-27T00:18:40.744+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.744+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_id, token_hash, expires_at, last_accessed_at, revoked_at, created_at
+FROM auth_sessions
+WHERE token_hash = ?
+  AND revoked_at IS NULL
+  AND expires_at > ?
+]
+2026-05-27T00:18:40.745+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.745+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE auth_sessions
+SET last_accessed_at = NOW()
+WHERE id = ?
+]
+2026-05-27T00:18:40.745+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.745+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.745+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.745+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:40.746+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ReviewDecisionRequest[remark=M11 联调通过]]
+2026-05-27T00:18:40.746+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.746+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ts.id,
+       ts.tool_id,
+       ts.submitter_id,
+       u.real_name AS submitter_name,
+       ts.status,
+       ts.remark,
+       ts.deleted,
+       ts.created_at,
+       ts.updated_at
+FROM tool_submissions ts
+JOIN users u ON u.id = ts.submitter_id
+WHERE ts.id = ?
+  AND ts.deleted = FALSE
+]
+2026-05-27T00:18:40.746+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.746+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT t.id,
+       t.name,
+       t.summary,
+       t.description,
+       t.url,
+       t.usage_guide,
+       t.recommender_id,
+       u.real_name AS recommender_name,
+       t.status,
+       t.star_count,
+       t.favorite_count,
+       t.comment_count,
+       t.deleted,
+       t.created_at,
+       t.updated_at
+FROM tools t
+JOIN users u ON u.id = t.recommender_id
+WHERE t.id = ?
+  AND t.deleted = FALSE
+]
+2026-05-27T00:18:40.747+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.747+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE tool_submissions
+SET status = ?, remark = ?, updated_by = ?, updated_at = NOW()
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.747+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.747+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE tools
+SET status = ?, updated_by = ?, updated_at = NOW()
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.747+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.747+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO audit_logs (action, object_type, object_id, operator_id, operator_name, detail)
+VALUES (?, ?, ?, ?, ?, ?)
+]
+2026-05-27T00:18:40.747+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.747+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ts.id AS submission_id,
+       ts.tool_id,
+       ts.submitter_id,
+       u.real_name AS submitter_name,
+       t.name AS tool_name,
+       t.summary AS tool_summary,
+       t.status AS tool_status,
+       ts.status AS submission_status,
+       ts.remark,
+       ts.created_at,
+       ts.updated_at
+FROM tool_submissions ts
+JOIN tools t ON t.id = ts.tool_id
+JOIN users u ON u.id = ts.submitter_id
+WHERE ts.id = ?
+  AND ts.deleted = FALSE
+  AND t.deleted = FALSE
+]
+2026-05-27T00:18:40.748+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.748+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT tt.tool_id, t.id, t.name, t.description, t.deleted, t.created_at, t.updated_at
+FROM tool_tags tt
+JOIN tags t ON t.id = tt.tag_id
+WHERE tt.tool_id IN (?)
+  AND t.deleted = FALSE
+ORDER BY tt.tool_id ASC, t.name ASC, t.id ASC
+]
+2026-05-27T00:18:40.748+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:40.749+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=ToolReviewResponse[submissionId=4, toolId=13, submitterId=20, submitterN (truncated)...]
+2026-05-27T00:18:40.750+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.tool.web.ToolController#listTools(String, boolean, String, List, String, String)
+2026-05-27T00:18:40.750+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.750+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_id, token_hash, expires_at, last_accessed_at, revoked_at, created_at
+FROM auth_sessions
+WHERE token_hash = ?
+  AND revoked_at IS NULL
+  AND expires_at > ?
+]
+2026-05-27T00:18:40.750+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.750+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE auth_sessions
+SET last_accessed_at = NOW()
+WHERE id = ?
+]
+2026-05-27T00:18:40.751+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.751+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.751+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.751+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:40.754+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.754+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT t.id,
+       t.name,
+       t.summary,
+       t.description,
+       t.url,
+       t.usage_guide,
+       t.recommender_id,
+       u.real_name AS recommender_name,
+       t.status,
+       t.star_count,
+       t.favorite_count,
+       t.comment_count,
+       t.deleted,
+       t.created_at,
+       t.updated_at
+FROM tools t
+JOIN users u ON u.id = t.recommender_id
+WHERE t.deleted = FALSE
+  AND t.recommender_id = ?
+ ORDER BY t.created_at DESC, t.id DESC]
+2026-05-27T00:18:40.755+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.755+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT tt.tool_id, t.id, t.name, t.description, t.deleted, t.created_at, t.updated_at
+FROM tool_tags tt
+JOIN tags t ON t.id = tt.tag_id
+WHERE tt.tool_id IN (?)
+  AND t.deleted = FALSE
+ORDER BY tt.tool_id ASC, t.name ASC, t.id ASC
+]
+2026-05-27T00:18:40.755+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:40.755+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=[ToolListItemResponse[id=13, name=M11 Acceptance Tool, summary=M11 summa (truncated)...]
+2026-05-27T00:18:40.757+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.engagement.web.ToolEngagementController#starTool(Long)
+2026-05-27T00:18:40.757+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.757+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_id, token_hash, expires_at, last_accessed_at, revoked_at, created_at
+FROM auth_sessions
+WHERE token_hash = ?
+  AND revoked_at IS NULL
+  AND expires_at > ?
+]
+2026-05-27T00:18:40.757+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.757+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE auth_sessions
+SET last_accessed_at = NOW()
+WHERE id = ?
+]
+2026-05-27T00:18:40.758+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.758+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.758+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.758+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:40.758+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.758+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT t.id,
+       t.name,
+       t.summary,
+       t.description,
+       t.url,
+       t.usage_guide,
+       t.recommender_id,
+       u.real_name AS recommender_name,
+       t.status,
+       t.star_count,
+       t.favorite_count,
+       t.comment_count,
+       t.deleted,
+       t.created_at,
+       t.updated_at
+FROM tools t
+JOIN users u ON u.id = t.recommender_id
+WHERE t.id = ?
+  AND t.deleted = FALSE
+]
+2026-05-27T00:18:40.758+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.758+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT COUNT(*)
+FROM tool_stars
+WHERE tool_id = ?
+  AND user_id = ?
+]
+2026-05-27T00:18:40.759+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.759+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO tool_stars (tool_id, user_id)
+VALUES (?, ?)
+]
+2026-05-27T00:18:40.759+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.759+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE tools
+SET star_count = star_count + 1, updated_at = NOW()
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.759+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:40.759+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=null, message=success]]
+2026-05-27T00:18:40.760+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.engagement.web.ToolEngagementController#favoriteTool(Long)
+2026-05-27T00:18:40.760+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.760+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_id, token_hash, expires_at, last_accessed_at, revoked_at, created_at
+FROM auth_sessions
+WHERE token_hash = ?
+  AND revoked_at IS NULL
+  AND expires_at > ?
+]
+2026-05-27T00:18:40.761+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.761+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE auth_sessions
+SET last_accessed_at = NOW()
+WHERE id = ?
+]
+2026-05-27T00:18:40.761+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.761+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.761+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.761+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:40.761+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.761+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT t.id,
+       t.name,
+       t.summary,
+       t.description,
+       t.url,
+       t.usage_guide,
+       t.recommender_id,
+       u.real_name AS recommender_name,
+       t.status,
+       t.star_count,
+       t.favorite_count,
+       t.comment_count,
+       t.deleted,
+       t.created_at,
+       t.updated_at
+FROM tools t
+JOIN users u ON u.id = t.recommender_id
+WHERE t.id = ?
+  AND t.deleted = FALSE
+]
+2026-05-27T00:18:40.762+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.762+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT COUNT(*)
+FROM tool_favorites
+WHERE tool_id = ?
+  AND user_id = ?
+]
+2026-05-27T00:18:40.762+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.762+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO tool_favorites (tool_id, user_id)
+VALUES (?, ?)
+]
+2026-05-27T00:18:40.762+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.762+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE tools
+SET favorite_count = favorite_count + 1, updated_at = NOW()
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.762+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:40.762+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=null, message=success]]
+2026-05-27T00:18:40.763+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.engagement.web.ToolEngagementController#createComment(Long, CommentCreateRequest)
+2026-05-27T00:18:40.764+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.764+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_id, token_hash, expires_at, last_accessed_at, revoked_at, created_at
+FROM auth_sessions
+WHERE token_hash = ?
+  AND revoked_at IS NULL
+  AND expires_at > ?
+]
+2026-05-27T00:18:40.764+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.764+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE auth_sessions
+SET last_accessed_at = NOW()
+WHERE id = ?
+]
+2026-05-27T00:18:40.764+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.764+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.764+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.764+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:40.765+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [CommentCreateRequest[content=<script>alert('x')</script>很好用]]
+2026-05-27T00:18:40.765+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.765+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT t.id,
+       t.name,
+       t.summary,
+       t.description,
+       t.url,
+       t.usage_guide,
+       t.recommender_id,
+       u.real_name AS recommender_name,
+       t.status,
+       t.star_count,
+       t.favorite_count,
+       t.comment_count,
+       t.deleted,
+       t.created_at,
+       t.updated_at
+FROM tools t
+JOIN users u ON u.id = t.recommender_id
+WHERE t.id = ?
+  AND t.deleted = FALSE
+]
+2026-05-27T00:18:40.765+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2026-05-27T00:18:40.765+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement
+2026-05-27T00:18:40.766+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.766+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE tools
+SET comment_count = comment_count + 1, updated_at = NOW()
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.766+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.766+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT tc.id,
+       tc.tool_id,
+       tc.user_id,
+       u.real_name AS author_name,
+       tc.content,
+       tc.status,
+       tc.deleted,
+       tc.created_at,
+       tc.updated_at
+FROM tool_comments tc
+JOIN users u ON u.id = tc.user_id
+WHERE tc.id = ?
+  AND tc.deleted = FALSE
+]
+2026-05-27T00:18:40.766+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:40.766+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=ToolCommentResponse[id=3, toolId=13, userId=20, authorName=Acceptance Us (truncated)...]
+2026-05-27T00:18:40.767+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.tool.web.ToolController#getTool(Long)
+2026-05-27T00:18:40.768+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.768+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_id, token_hash, expires_at, last_accessed_at, revoked_at, created_at
+FROM auth_sessions
+WHERE token_hash = ?
+  AND revoked_at IS NULL
+  AND expires_at > ?
+]
+2026-05-27T00:18:40.768+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.768+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE auth_sessions
+SET last_accessed_at = NOW()
+WHERE id = ?
+]
+2026-05-27T00:18:40.768+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.768+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.768+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.768+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:40.768+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.768+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT t.id,
+       t.name,
+       t.summary,
+       t.description,
+       t.url,
+       t.usage_guide,
+       t.recommender_id,
+       u.real_name AS recommender_name,
+       t.status,
+       t.star_count,
+       t.favorite_count,
+       t.comment_count,
+       t.deleted,
+       t.created_at,
+       t.updated_at
+FROM tools t
+JOIN users u ON u.id = t.recommender_id
+WHERE t.id = ?
+  AND t.deleted = FALSE
+]
+2026-05-27T00:18:40.769+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.769+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ts.id,
+       ts.tool_id,
+       ts.submitter_id,
+       u.real_name AS submitter_name,
+       ts.status,
+       ts.remark,
+       ts.deleted,
+       ts.created_at,
+       ts.updated_at
+FROM tool_submissions ts
+JOIN users u ON u.id = ts.submitter_id
+WHERE ts.tool_id = ?
+  AND ts.deleted = FALSE
+ORDER BY ts.created_at DESC, ts.id DESC
+LIMIT 1
+]
+2026-05-27T00:18:40.769+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.769+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT tt.tool_id, t.id, t.name, t.description, t.deleted, t.created_at, t.updated_at
+FROM tool_tags tt
+JOIN tags t ON t.id = tt.tag_id
+WHERE tt.tool_id IN (?)
+  AND t.deleted = FALSE
+ORDER BY tt.tool_id ASC, t.name ASC, t.id ASC
+]
+2026-05-27T00:18:40.769+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.769+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT COUNT(*)
+FROM tool_stars
+WHERE tool_id = ?
+  AND user_id = ?
+]
+2026-05-27T00:18:40.769+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.769+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT COUNT(*)
+FROM tool_favorites
+WHERE tool_id = ?
+  AND user_id = ?
+]
+2026-05-27T00:18:40.770+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:40.770+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=ToolDetailResponse[id=13, name=M11 Acceptance Tool, summary=M11 summary, (truncated)...]
+2026-05-27T00:18:40.771+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.workflow.web.AdminWorkflowController#createWorkflow(WorkflowUpsertRequest)
+2026-05-27T00:18:40.771+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.771+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_id, token_hash, expires_at, last_accessed_at, revoked_at, created_at
+FROM auth_sessions
+WHERE token_hash = ?
+  AND revoked_at IS NULL
+  AND expires_at > ?
+]
+2026-05-27T00:18:40.772+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.772+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE auth_sessions
+SET last_accessed_at = NOW()
+WHERE id = ?
+]
+2026-05-27T00:18:40.772+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.772+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.772+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.772+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:40.773+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [WorkflowUpsertRequest[name=M11 验收工作流, scenario=回归验收, description=串联工具审核与使用流程, steps=提交工具，管理员审核，员工互动， (truncated)...]
+2026-05-27T00:18:40.774+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.774+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT t.id,
+       t.name,
+       t.summary,
+       t.description,
+       t.url,
+       t.usage_guide,
+       t.recommender_id,
+       u.real_name AS recommender_name,
+       t.status,
+       t.star_count,
+       t.favorite_count,
+       t.comment_count,
+       t.deleted,
+       t.created_at,
+       t.updated_at
+FROM tools t
+JOIN users u ON u.id = t.recommender_id
+WHERE t.deleted = FALSE
+  AND t.id IN (?)
+ORDER BY t.updated_at DESC, t.id DESC
+]
+2026-05-27T00:18:40.775+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2026-05-27T00:18:40.775+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement
+2026-05-27T00:18:40.775+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.775+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [DELETE FROM workflow_tools WHERE workflow_id = ?]
+2026-05-27T00:18:40.775+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.775+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO workflow_tools (workflow_id, tool_id, sort_order)
+VALUES (?, ?, ?)
+]
+2026-05-27T00:18:40.775+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.775+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO audit_logs (action, object_type, object_id, operator_id, operator_name, detail)
+VALUES (?, ?, ?, ?, ?, ?)
+]
+2026-05-27T00:18:40.776+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.776+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT w.id,
+       w.name,
+       w.scenario,
+       w.description,
+       w.steps,
+       w.featured,
+       w.status,
+       w.creator_id,
+       u.real_name AS creator_name,
+       w.deleted,
+       w.created_at,
+       w.updated_at
+FROM workflows w
+JOIN users u ON u.id = w.creator_id
+WHERE w.id = ?
+  AND w.deleted = FALSE
+]
+2026-05-27T00:18:40.776+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.776+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT workflow_id, tool_id, sort_order
+FROM workflow_tools
+WHERE workflow_id IN (?)
+ORDER BY workflow_id, sort_order ASC, tool_id ASC
+]
+2026-05-27T00:18:40.776+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.776+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT t.id,
+       t.name,
+       t.summary,
+       t.description,
+       t.url,
+       t.usage_guide,
+       t.recommender_id,
+       u.real_name AS recommender_name,
+       t.status,
+       t.star_count,
+       t.favorite_count,
+       t.comment_count,
+       t.deleted,
+       t.created_at,
+       t.updated_at
+FROM tools t
+JOIN users u ON u.id = t.recommender_id
+WHERE t.deleted = FALSE
+  AND t.id IN (?)
+ORDER BY t.updated_at DESC, t.id DESC
+]
+2026-05-27T00:18:40.776+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.777+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT tt.tool_id, t.id, t.name, t.description, t.deleted, t.created_at, t.updated_at
+FROM tool_tags tt
+JOIN tags t ON t.id = tt.tag_id
+WHERE tt.tool_id IN (?)
+  AND t.deleted = FALSE
+ORDER BY tt.tool_id ASC, t.name ASC, t.id ASC
+]
+2026-05-27T00:18:40.777+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:40.778+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=WorkflowDetailResponse[id=3, name=M11 验收工作流, scenario=回归验收, description= (truncated)...]
+2026-05-27T00:18:40.779+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.779+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO operation_logs (operation, module, user_id, success, message)
+VALUES (?, ?, ?, ?, ?)
+]
+2026-05-27T00:18:40.779+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL update [DELETE FROM operation_logs
+WHERE id IN (
+    SELECT id
+    FROM operation_logs
+    ORDER BY created_at DESC, id DESC
+    OFFSET 200
+)
+]
+2026-05-27T00:18:40.781+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.workflow.web.WorkflowController#listWorkflows(String, Boolean)
+2026-05-27T00:18:40.781+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.781+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT w.id,
+       w.name,
+       w.scenario,
+       w.description,
+       w.steps,
+       w.featured,
+       w.status,
+       w.creator_id,
+       u.real_name AS creator_name,
+       w.deleted,
+       w.created_at,
+       w.updated_at
+FROM workflows w
+JOIN users u ON u.id = w.creator_id
+WHERE w.deleted = FALSE
+  AND w.status = 'ACTIVE'
+ AND w.featured = TRUE ORDER BY w.featured DESC, w.updated_at DESC, w.id DESC]
+2026-05-27T00:18:40.782+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.782+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT workflow_id, tool_id, sort_order
+FROM workflow_tools
+WHERE workflow_id IN (?)
+ORDER BY workflow_id, sort_order ASC, tool_id ASC
+]
+2026-05-27T00:18:40.782+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.782+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT t.id,
+       t.name,
+       t.summary,
+       t.description,
+       t.url,
+       t.usage_guide,
+       t.recommender_id,
+       u.real_name AS recommender_name,
+       t.status,
+       t.star_count,
+       t.favorite_count,
+       t.comment_count,
+       t.deleted,
+       t.created_at,
+       t.updated_at
+FROM tools t
+JOIN users u ON u.id = t.recommender_id
+WHERE t.deleted = FALSE
+  AND t.id IN (?)
+ORDER BY t.updated_at DESC, t.id DESC
+]
+2026-05-27T00:18:40.783+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:40.783+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=[WorkflowListItemResponse[id=3, name=M11 验收工作流, scenario=回归验收, descripti (truncated)...]
+2026-05-27T00:18:40.784+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.importexport.web.AdminImportExportController#previewImport(ImportCsvRequest)
+2026-05-27T00:18:40.784+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.784+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_id, token_hash, expires_at, last_accessed_at, revoked_at, created_at
+FROM auth_sessions
+WHERE token_hash = ?
+  AND revoked_at IS NULL
+  AND expires_at > ?
+]
+2026-05-27T00:18:40.785+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.785+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE auth_sessions
+SET last_accessed_at = NOW()
+WHERE id = ?
+]
+2026-05-27T00:18:40.785+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.785+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.786+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.786+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:40.788+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ImportCsvRequest[fileName=m11-tools.csv, csvContent=name,summary,description,url,usageGuide,tags<EOL>M11 (truncated)...]
+2026-05-27T00:18:40.789+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.789+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, name, description, deleted, created_at, updated_at
+FROM tags
+WHERE LOWER(name) = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.791+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:40.791+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=ImportPreviewResponse[totalRows=1, validRows=1, invalidRows=0, errors=[] (truncated)...]
+2026-05-27T00:18:40.794+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.importexport.web.AdminImportExportController#createImportTask(ImportCsvRequest)
+2026-05-27T00:18:40.794+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.794+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_id, token_hash, expires_at, last_accessed_at, revoked_at, created_at
+FROM auth_sessions
+WHERE token_hash = ?
+  AND revoked_at IS NULL
+  AND expires_at > ?
+]
+2026-05-27T00:18:40.794+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.794+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE auth_sessions
+SET last_accessed_at = NOW()
+WHERE id = ?
+]
+2026-05-27T00:18:40.795+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.795+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.795+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.795+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:40.795+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ImportCsvRequest[fileName=m11-tools.csv, csvContent=name,summary,description,url,usageGuide,tags<EOL>M11 (truncated)...]
+2026-05-27T00:18:40.796+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.796+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, name, description, deleted, created_at, updated_at
+FROM tags
+WHERE LOWER(name) = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.796+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.796+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, name, description, deleted, created_at, updated_at
+FROM tags
+WHERE LOWER(name) = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.796+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.796+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, name, description, deleted, created_at, updated_at
+FROM tags
+WHERE deleted = FALSE
+  AND id IN (?)
+ORDER BY name ASC, id ASC
+]
+2026-05-27T00:18:40.797+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.797+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT t.id,
+       t.name,
+       t.summary,
+       t.description,
+       t.url,
+       t.usage_guide,
+       t.recommender_id,
+       u.real_name AS recommender_name,
+       t.status,
+       t.star_count,
+       t.favorite_count,
+       t.comment_count,
+       t.deleted,
+       t.created_at,
+       t.updated_at
+FROM tools t
+JOIN users u ON u.id = t.recommender_id
+WHERE t.deleted = FALSE
+  AND t.status <> 'REJECTED'
+  AND (
+    LOWER(t.name) = ?
+ OR LOWER(t.url) = ?)]
+2026-05-27T00:18:40.797+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2026-05-27T00:18:40.797+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement
+2026-05-27T00:18:40.798+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.798+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [DELETE FROM tool_tags WHERE tool_id = ?]
+2026-05-27T00:18:40.798+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.798+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO tool_tags (tool_id, tag_id)
+VALUES (?, ?)
+]
+2026-05-27T00:18:40.798+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.798+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO audit_logs (action, object_type, object_id, operator_id, operator_name, detail)
+VALUES (?, ?, ?, ?, ?, ?)
+]
+2026-05-27T00:18:40.798+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.798+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT t.id,
+       t.name,
+       t.summary,
+       t.description,
+       t.url,
+       t.usage_guide,
+       t.recommender_id,
+       u.real_name AS recommender_name,
+       t.status,
+       t.star_count,
+       t.favorite_count,
+       t.comment_count,
+       t.deleted,
+       t.created_at,
+       t.updated_at
+FROM tools t
+JOIN users u ON u.id = t.recommender_id
+WHERE t.id = ?
+  AND t.deleted = FALSE
+]
+2026-05-27T00:18:40.799+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.799+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ts.id,
+       ts.tool_id,
+       ts.submitter_id,
+       u.real_name AS submitter_name,
+       ts.status,
+       ts.remark,
+       ts.deleted,
+       ts.created_at,
+       ts.updated_at
+FROM tool_submissions ts
+JOIN users u ON u.id = ts.submitter_id
+WHERE ts.tool_id = ?
+  AND ts.deleted = FALSE
+ORDER BY ts.created_at DESC, ts.id DESC
+LIMIT 1
+]
+2026-05-27T00:18:40.799+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.799+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT tt.tool_id, t.id, t.name, t.description, t.deleted, t.created_at, t.updated_at
+FROM tool_tags tt
+JOIN tags t ON t.id = tt.tag_id
+WHERE tt.tool_id IN (?)
+  AND t.deleted = FALSE
+ORDER BY tt.tool_id ASC, t.name ASC, t.id ASC
+]
+2026-05-27T00:18:40.799+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2026-05-27T00:18:40.799+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement
+2026-05-27T00:18:40.800+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT id, task_name, file_path, file_name, status, requester_id, success_count, failure_count, error_report_path, detail, deleted, created_at, updated_at
+FROM import_tasks
+WHERE deleted = FALSE
+ORDER BY created_at DESC, id DESC
+]
+2026-05-27T00:18:40.800+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.800+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO audit_logs (action, object_type, object_id, operator_id, operator_name, detail)
+VALUES (?, ?, ?, ?, ?, ?)
+]
+2026-05-27T00:18:40.801+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:40.801+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=ImportTaskResponse[id=2, taskName=工具批量导入, fileName=m11-tools.csv, status (truncated)...]
+2026-05-27T00:18:40.802+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.importexport.web.AdminImportExportController#createExportTask(ExportTaskCreateRequest)
+2026-05-27T00:18:40.802+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.802+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_id, token_hash, expires_at, last_accessed_at, revoked_at, created_at
+FROM auth_sessions
+WHERE token_hash = ?
+  AND revoked_at IS NULL
+  AND expires_at > ?
+]
+2026-05-27T00:18:40.803+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.803+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE auth_sessions
+SET last_accessed_at = NOW()
+WHERE id = ?
+]
+2026-05-27T00:18:40.803+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.803+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.803+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.803+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:40.804+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ExportTaskCreateRequest[fields=[name, url, tags, updatedAt]]]
+2026-05-27T00:18:40.804+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.804+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT t.id,
+       t.name,
+       t.summary,
+       t.description,
+       t.url,
+       t.usage_guide,
+       t.recommender_id,
+       u.real_name AS recommender_name,
+       t.status,
+       t.star_count,
+       t.favorite_count,
+       t.comment_count,
+       t.deleted,
+       t.created_at,
+       t.updated_at
+FROM tools t
+JOIN users u ON u.id = t.recommender_id
+WHERE t.deleted = FALSE
+ ORDER BY t.created_at DESC, t.id DESC]
+2026-05-27T00:18:40.805+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.805+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT tt.tool_id, t.id, t.name, t.description, t.deleted, t.created_at, t.updated_at
+FROM tool_tags tt
+JOIN tags t ON t.id = tt.tag_id
+WHERE tt.tool_id IN (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+  AND t.deleted = FALSE
+ORDER BY tt.tool_id ASC, t.name ASC, t.id ASC
+]
+2026-05-27T00:18:40.806+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2026-05-27T00:18:40.806+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement
+2026-05-27T00:18:40.807+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT id, task_name, file_path, file_name, status, requester_id, success_count, failure_count, error_report_path, detail, deleted, created_at, updated_at
+FROM export_tasks
+WHERE deleted = FALSE
+ORDER BY created_at DESC, id DESC
+]
+2026-05-27T00:18:40.807+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.807+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO audit_logs (action, object_type, object_id, operator_id, operator_name, detail)
+VALUES (?, ?, ?, ?, ?, ?)
+]
+2026-05-27T00:18:40.807+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:40.808+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=ExportTaskResponse[id=2, taskName=工具批量导出, fileName=tool-export-202605270 (truncated)...]
+2026-05-27T00:18:40.811+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.log.web.AdminLogController#listAuditLogs(String, String, String, Integer, Integer)
+2026-05-27T00:18:40.812+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.812+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_id, token_hash, expires_at, last_accessed_at, revoked_at, created_at
+FROM auth_sessions
+WHERE token_hash = ?
+  AND revoked_at IS NULL
+  AND expires_at > ?
+]
+2026-05-27T00:18:40.812+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.812+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE auth_sessions
+SET last_accessed_at = NOW()
+WHERE id = ?
+]
+2026-05-27T00:18:40.812+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.813+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.813+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.813+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:40.816+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.816+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, action, object_type, object_id, operator_id, operator_name, detail, created_at
+FROM audit_logs
+WHERE 1 = 1
+ AND action = ? AND object_type = ? AND (
+    LOWER(COALESCE(operator_name, '')) LIKE ?
+    OR LOWER(COALESCE(object_id, '')) LIKE ?
+    OR LOWER(COALESCE(detail, '')) LIKE ?
+ )
+ORDER BY created_at DESC, id DESC
+LIMIT ?
+OFFSET ?
+]
+2026-05-27T00:18:40.819+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.819+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT COUNT(*)
+FROM audit_logs
+WHERE 1 = 1
+ AND action = ? AND object_type = ? AND (
+    LOWER(COALESCE(operator_name, '')) LIKE ?
+    OR LOWER(COALESCE(object_id, '')) LIKE ?
+    OR LOWER(COALESCE(detail, '')) LIKE ?
+ )
+]
+2026-05-27T00:18:40.820+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:40.826+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=PagedResponse[items=[AuditLogItemResponse[id=27, action=TOOL_SUBMITTED,  (truncated)...]
+2026-05-27T00:18:40.830+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.log.web.AdminLogController#listOperationLogs(String, Boolean, String, Integer, Integer)
+2026-05-27T00:18:40.830+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.830+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_id, token_hash, expires_at, last_accessed_at, revoked_at, created_at
+FROM auth_sessions
+WHERE token_hash = ?
+  AND revoked_at IS NULL
+  AND expires_at > ?
+]
+2026-05-27T00:18:40.831+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:40.831+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE auth_sessions
+SET last_accessed_at = NOW()
+WHERE id = ?
+]
+2026-05-27T00:18:40.831+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.831+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:40.831+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.831+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:40.835+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.835+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ol.id,
+       ol.operation,
+       ol.module,
+       ol.user_id,
+       u.username,
+       u.real_name,
+       ol.success,
+       ol.message,
+       ol.created_at
+FROM operation_logs ol
+LEFT JOIN users u ON u.id = ol.user_id
+WHERE 1 = 1
+ AND ol.module = ?ORDER BY ol.created_at DESC, ol.id DESC
+LIMIT ?
+OFFSET ?
+]
+2026-05-27T00:18:40.838+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.838+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT COUNT(*)
+FROM operation_logs ol
+LEFT JOIN users u ON u.id = ol.user_id
+WHERE 1 = 1
+ AND ol.module = ?]
+2026-05-27T00:18:40.839+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:40.845+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=PagedResponse[items=[OperationLogItemResponse[id=5, operation=TOOL_SUBMI (truncated)...]
+2026-05-27T00:18:40.848+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.848+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT star_count FROM tools WHERE id = ?]
+2026-05-27T00:18:40.848+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.848+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT favorite_count FROM tools WHERE id = ?]
+2026-05-27T00:18:40.848+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:40.848+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT comment_count FROM tools WHERE id = ?]
+2026-05-27T00:18:40.849+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT COUNT(*) FROM tools WHERE name = 'M11 Imported Tool']
+2026-05-27T00:18:40.849+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT COUNT(*)
+FROM operation_logs
+WHERE module = 'TOOL'
+  AND operation = 'TOOL_SUBMIT'
+]
+]]></system-out>
+  </testcase>
+</testsuite>

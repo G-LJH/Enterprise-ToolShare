@@ -1,0 +1,12 @@
+.env
+.env.*
+*.env
+node_modules/
+target/
+backups/
+certbot/
+nginx/ssl/
+.git/
+.gitignore
+*.log
+.DS_Store

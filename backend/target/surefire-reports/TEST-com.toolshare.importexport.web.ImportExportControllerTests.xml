@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.toolshare.importexport.web.ImportExportControllerTests" time="0.254" tests="2" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="socksProxyHost" value="127.0.0.1"/>
+    <property name="http.proxyHost" value="127.0.0.1"/>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/ljh/Documents/tool share/backend/target/test-classes:/Users/ljh/Documents/tool share/backend/target/classes:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.3.2/spring-boot-starter-web-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter/3.3.2/spring-boot-starter-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot/3.3.2/spring-boot-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.3.2/spring-boot-autoconfigure-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.3.2/spring-boot-starter-logging-3.3.2.jar:/Users/ljh/.m2/repository/ch/qos/logback/logback-classic/1.5.6/logback-classic-1.5.6.jar:/Users/ljh/.m2/repository/ch/qos/logback/logback-core/1.5.6/logback-core-1.5.6.jar:/Users/ljh/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.23.1/log4j-to-slf4j-2.23.1.jar:/Users/ljh/.m2/repository/org/apache/logging/log4j/log4j-api/2.23.1/log4j-api-2.23.1.jar:/Users/ljh/.m2/repository/org/slf4j/jul-to-slf4j/2.0.13/jul-to-slf4j-2.0.13.jar:/Users/ljh/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/ljh/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.3.2/spring-boot-starter-json-3.3.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.17.2/jackson-datatype-jdk8-2.17.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.17.2/jackson-datatype-jsr310-2.17.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.17.2/jackson-module-parameter-names-2.17.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.3.2/spring-boot-starter-tomcat-3.3.2.jar:/Users/ljh/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.26/tomcat-embed-core-10.1.26.jar:/Users/ljh/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.26/tomcat-embed-websocket-10.1.26.jar:/Users/ljh/.m2/repository/org/springframework/spring-web/6.1.11/spring-web-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-beans/6.1.11/spring-beans-6.1.11.jar:/Users/ljh/.m2/repository/io/micrometer/micrometer-observation/1.13.2/micrometer-observation-1.13.2.jar:/Users/ljh/.m2/repository/io/micrometer/micrometer-commons/1.13.2/micrometer-commons-1.13.2.jar:/Users/ljh/.m2/repository/org/springframework/spring-webmvc/6.1.11/spring-webmvc-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-aop/6.1.11/spring-aop-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-context/6.1.11/spring-context-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-expression/6.1.11/spring-expression-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.3.2/spring-boot-starter-validation-3.3.2.jar:/Users/ljh/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.26/tomcat-embed-el-10.1.26.jar:/Users/ljh/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar:/Users/ljh/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/ljh/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar:/Users/ljh/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.3.2/spring-boot-starter-jdbc-3.3.2.jar:/Users/ljh/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar:/Users/ljh/.m2/repository/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar:/Users/ljh/.m2/repository/org/springframework/spring-jdbc/6.1.11/spring-jdbc-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-tx/6.1.11/spring-tx-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/security/spring-security-crypto/6.3.1/spring-security-crypto-6.3.1.jar:/Users/ljh/.m2/repository/org/flywaydb/flyway-core/10.10.0/flyway-core-10.10.0.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.17.2/jackson-dataformat-toml-2.17.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar:/Users/ljh/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/Users/ljh/.m2/repository/org/postgresql/postgresql/42.7.3/postgresql-42.7.3.jar:/Users/ljh/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/Users/ljh/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.3.2/spring-boot-starter-test-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-test/3.3.2/spring-boot-test-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.3.2/spring-boot-test-autoconfigure-3.3.2.jar:/Users/ljh/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/Users/ljh/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/Users/ljh/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/Users/ljh/.m2/repository/net/minidev/json-smart/2.5.1/json-smart-2.5.1.jar:/Users/ljh/.m2/repository/net/minidev/accessors-smart/2.5.1/accessors-smart-2.5.1.jar:/Users/ljh/.m2/repository/org/ow2/asm/asm/9.6/asm-9.6.jar:/Users/ljh/.m2/repository/org/assertj/assertj-core/3.25.3/assertj-core-3.25.3.jar:/Users/ljh/.m2/repository/net/bytebuddy/byte-buddy/1.14.18/byte-buddy-1.14.18.jar:/Users/ljh/.m2/repository/org/awaitility/awaitility/4.2.1/awaitility-4.2.1.jar:/Users/ljh/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/ljh/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.3/junit-jupiter-5.10.3.jar:/Users/ljh/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.3/junit-jupiter-api-5.10.3.jar:/Users/ljh/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/ljh/.m2/repository/org/junit/platform/junit-platform-commons/1.10.3/junit-platform-commons-1.10.3.jar:/Users/ljh/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/ljh/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.3/junit-jupiter-params-5.10.3.jar:/Users/ljh/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.3/junit-jupiter-engine-5.10.3.jar:/Users/ljh/.m2/repository/org/junit/platform/junit-platform-engine/1.10.3/junit-platform-engine-1.10.3.jar:/Users/ljh/.m2/repository/org/mockito/mockito-core/5.11.0/mockito-core-5.11.0.jar:/Users/ljh/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.18/byte-buddy-agent-1.14.18.jar:/Users/ljh/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/ljh/.m2/repository/org/mockito/mockito-junit-jupiter/5.11.0/mockito-junit-jupiter-5.11.0.jar:/Users/ljh/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/Users/ljh/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/ljh/.m2/repository/org/springframework/spring-core/6.1.11/spring-core-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-jcl/6.1.11/spring-jcl-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-test/6.1.11/spring-test-6.1.11.jar:/Users/ljh/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:"/>
+    <property name="https.proxyPort" value="7897"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/ljh/Documents/tool share/backend/target/surefire/surefirebooter-20260527001831024_3.jar /Users/ljh/Documents/tool share/backend/target/surefire 2026-05-27T00-18-30_928-jvmRun1 surefire-20260527001831024_1tmp surefire_0-20260527001831024_2tmp"/>
+    <property name="http.nonProxyHosts" value="127.0.0.1|192.168.0.0/16|*.192.168.0.0/16|10.0.0.0/8|*.10.0.0.0/8|172.16.0.0/12|*.172.16.0.0/12|172.29.0.0/16|*.172.29.0.0/16|localhost|*.localhost|local|*.local|crashlytics.com|*.crashlytics.com|&lt;local&gt;|*.&lt;local&gt;"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/ljh/Documents/tool share/backend/target/test-classes:/Users/ljh/Documents/tool share/backend/target/classes:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.3.2/spring-boot-starter-web-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter/3.3.2/spring-boot-starter-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot/3.3.2/spring-boot-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.3.2/spring-boot-autoconfigure-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.3.2/spring-boot-starter-logging-3.3.2.jar:/Users/ljh/.m2/repository/ch/qos/logback/logback-classic/1.5.6/logback-classic-1.5.6.jar:/Users/ljh/.m2/repository/ch/qos/logback/logback-core/1.5.6/logback-core-1.5.6.jar:/Users/ljh/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.23.1/log4j-to-slf4j-2.23.1.jar:/Users/ljh/.m2/repository/org/apache/logging/log4j/log4j-api/2.23.1/log4j-api-2.23.1.jar:/Users/ljh/.m2/repository/org/slf4j/jul-to-slf4j/2.0.13/jul-to-slf4j-2.0.13.jar:/Users/ljh/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/ljh/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.3.2/spring-boot-starter-json-3.3.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.17.2/jackson-datatype-jdk8-2.17.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.17.2/jackson-datatype-jsr310-2.17.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.17.2/jackson-module-parameter-names-2.17.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.3.2/spring-boot-starter-tomcat-3.3.2.jar:/Users/ljh/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.26/tomcat-embed-core-10.1.26.jar:/Users/ljh/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.26/tomcat-embed-websocket-10.1.26.jar:/Users/ljh/.m2/repository/org/springframework/spring-web/6.1.11/spring-web-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-beans/6.1.11/spring-beans-6.1.11.jar:/Users/ljh/.m2/repository/io/micrometer/micrometer-observation/1.13.2/micrometer-observation-1.13.2.jar:/Users/ljh/.m2/repository/io/micrometer/micrometer-commons/1.13.2/micrometer-commons-1.13.2.jar:/Users/ljh/.m2/repository/org/springframework/spring-webmvc/6.1.11/spring-webmvc-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-aop/6.1.11/spring-aop-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-context/6.1.11/spring-context-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-expression/6.1.11/spring-expression-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.3.2/spring-boot-starter-validation-3.3.2.jar:/Users/ljh/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.26/tomcat-embed-el-10.1.26.jar:/Users/ljh/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar:/Users/ljh/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/ljh/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar:/Users/ljh/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.3.2/spring-boot-starter-jdbc-3.3.2.jar:/Users/ljh/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar:/Users/ljh/.m2/repository/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar:/Users/ljh/.m2/repository/org/springframework/spring-jdbc/6.1.11/spring-jdbc-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-tx/6.1.11/spring-tx-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/security/spring-security-crypto/6.3.1/spring-security-crypto-6.3.1.jar:/Users/ljh/.m2/repository/org/flywaydb/flyway-core/10.10.0/flyway-core-10.10.0.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.17.2/jackson-dataformat-toml-2.17.2.jar:/Users/ljh/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar:/Users/ljh/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/Users/ljh/.m2/repository/org/postgresql/postgresql/42.7.3/postgresql-42.7.3.jar:/Users/ljh/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/Users/ljh/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.3.2/spring-boot-starter-test-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-test/3.3.2/spring-boot-test-3.3.2.jar:/Users/ljh/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.3.2/spring-boot-test-autoconfigure-3.3.2.jar:/Users/ljh/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/Users/ljh/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/Users/ljh/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/Users/ljh/.m2/repository/net/minidev/json-smart/2.5.1/json-smart-2.5.1.jar:/Users/ljh/.m2/repository/net/minidev/accessors-smart/2.5.1/accessors-smart-2.5.1.jar:/Users/ljh/.m2/repository/org/ow2/asm/asm/9.6/asm-9.6.jar:/Users/ljh/.m2/repository/org/assertj/assertj-core/3.25.3/assertj-core-3.25.3.jar:/Users/ljh/.m2/repository/net/bytebuddy/byte-buddy/1.14.18/byte-buddy-1.14.18.jar:/Users/ljh/.m2/repository/org/awaitility/awaitility/4.2.1/awaitility-4.2.1.jar:/Users/ljh/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/ljh/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.3/junit-jupiter-5.10.3.jar:/Users/ljh/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.3/junit-jupiter-api-5.10.3.jar:/Users/ljh/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/ljh/.m2/repository/org/junit/platform/junit-platform-commons/1.10.3/junit-platform-commons-1.10.3.jar:/Users/ljh/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/ljh/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.3/junit-jupiter-params-5.10.3.jar:/Users/ljh/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.3/junit-jupiter-engine-5.10.3.jar:/Users/ljh/.m2/repository/org/junit/platform/junit-platform-engine/1.10.3/junit-platform-engine-1.10.3.jar:/Users/ljh/.m2/repository/org/mockito/mockito-core/5.11.0/mockito-core-5.11.0.jar:/Users/ljh/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.18/byte-buddy-agent-1.14.18.jar:/Users/ljh/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/ljh/.m2/repository/org/mockito/mockito-junit-jupiter/5.11.0/mockito-junit-jupiter-5.11.0.jar:/Users/ljh/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/Users/ljh/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/ljh/.m2/repository/org/springframework/spring-core/6.1.11/spring-core-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-jcl/6.1.11/spring-jcl-6.1.11.jar:/Users/ljh/.m2/repository/org/springframework/spring-test/6.1.11/spring-test-6.1.11.jar:/Users/ljh/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/ljh"/>
+    <property name="user.language" value="zh"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-04-21"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="https.proxyHost" value="127.0.0.1"/>
+    <property name="basedir" value="/Users/ljh/Documents/tool share/backend"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/ljh/Documents/tool share/backend/target/surefire/surefirebooter-20260527001831024_3.jar"/>
+    <property name="user.script" value="Hans"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="127.0.0.1|192.168.0.0/16|*.192.168.0.0/16|10.0.0.0/8|*.10.0.0.0/8|172.16.0.0/12|*.172.16.0.0/12|172.29.0.0/16|*.172.29.0.0/16|localhost|*.localhost|local|*.local|crashlytics.com|*.crashlytics.com|&lt;local&gt;|*.&lt;local&gt;"/>
+    <property name="java.runtime.version" value="21.0.11+9-LTS-211"/>
+    <property name="user.name" value="ljh"/>
+    <property name="stdout.encoding" value="US-ASCII"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="13.4.1"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/ljh/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/rp/548l_1791s739ttzt9_s4qfm0000gn/T/"/>
+    <property name="com.zaxxer.hikari.pool_number" value="2"/>
+    <property name="java.version" value="21.0.11"/>
+    <property name="user.dir" value="/Users/ljh/Documents/tool share/backend"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="socksProxyPort" value="7897"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="56753"/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="US-ASCII"/>
+    <property name="java.library.path" value="/Users/ljh/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="US-ASCII"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="21.0.11+9-LTS-211"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="127.0.0.1|192.168.0.0/16|*.192.168.0.0/16|10.0.0.0/8|*.10.0.0.0/8|172.16.0.0/12|*.172.16.0.0/12|172.29.0.0/16|*.172.29.0.0/16|localhost|*.localhost|local|*.local|crashlytics.com|*.crashlytics.com|&lt;local&gt;|*.&lt;local&gt;"/>
+    <property name="java.class.version" value="65.0"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[tool-share-backend] "/>
+    <property name="http.proxyPort" value="7897"/>
+  </properties>
+  <testcase name="adminShouldDownloadTemplatePreviewImportAndExportTools" classname="com.toolshare.importexport.web.ImportExportControllerTests" time="0.111">
+    <system-out><![CDATA[2026-05-27T00:18:38.760+08:00 DEBUG 56753 --- [tool-share-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [ImportExportControllerTests]: using SpringBootContextLoader
+2026-05-27T00:18:38.760+08:00  INFO 56753 --- [tool-share-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.toolshare.importexport.web.ImportExportControllerTests]: ImportExportControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-27T00:18:38.761+08:00 DEBUG 56753 --- [tool-share-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Using ContextCustomizerFactory implementations for test class [ImportExportControllerTests]: [ImportsContextCustomizerFactory, ExcludeFilterContextCustomizerFactory, HttpGraphQlTesterContextCustomizerFactory, DuplicateJsonObjectContextCustomizerFactory, MockitoContextCustomizerFactory, TestRestTemplateContextCustomizerFactory, WebTestClientContextCustomizerFactory, DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory, OverrideAutoConfigurationContextCustomizerFactory, ObservabilityContextCustomizerFactory, TypeExcludeFiltersContextCustomizerFactory, PropertyMappingContextCustomizerFactory, WebDriverContextCustomizerFactory, MockServerContainerContextCustomizerFactory, DynamicPropertiesContextCustomizerFactory]
+2026-05-27T00:18:38.763+08:00 DEBUG 56753 --- [tool-share-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Using ContextCustomizers for test class [ImportExportControllerTests]: [ImportsContextCustomizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer, DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer, DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, WebDriverContextCustomizer]
+2026-05-27T00:18:38.782+08:00  INFO 56753 --- [tool-share-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.toolshare.ToolShareApplication for test class com.toolshare.importexport.web.ImportExportControllerTests
+2026-05-27T00:18:38.783+08:00 DEBUG 56753 --- [tool-share-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners for test class [ImportExportControllerTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, ResetMocksTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener]
+2026-05-27T00:18:38.786+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT id FROM users WHERE username = 'admin']
+2026-05-27T00:18:38.787+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:38.787+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO tags (name, description, created_by, updated_by)
+VALUES (?, ?, ?, ?)
+]
+2026-05-27T00:18:38.788+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:38.788+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id FROM tags WHERE name = ?]
+2026-05-27T00:18:38.788+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:38.788+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO tools (name, summary, description, url, usage_guide, recommender_id, status, star_count, favorite_count, comment_count, created_by, updated_by)
+VALUES (?, ?, ?, ?, ?, ?, 'APPROVED', 0, 0, 0, ?, ?)
+]
+2026-05-27T00:18:38.789+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:38.789+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id FROM tools WHERE name = ?]
+2026-05-27T00:18:38.789+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:38.789+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO tool_tags (tool_id, tag_id) VALUES (?, ?)]
+2026-05-27T00:18:38.790+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.importexport.web.AdminImportExportController#downloadTemplate()
+2026-05-27T00:18:38.790+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:38.790+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:38.790+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:38.790+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:38.791+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:38.792+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=FileDownloadResponse[fileName=tool-import-template.csv, content=name,sum (truncated)...]
+2026-05-27T00:18:38.795+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.importexport.web.AdminImportExportController#previewImport(ImportCsvRequest)
+2026-05-27T00:18:38.796+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:38.796+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:38.797+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:38.797+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:38.801+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ImportCsvRequest[fileName=tools.csv, csvContent=name,summary,description,url,usageGuide,tags<EOL>Importe (truncated)...]
+2026-05-27T00:18:38.809+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:38.809+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, name, description, deleted, created_at, updated_at
+FROM tags
+WHERE LOWER(name) = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:38.811+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:38.816+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=ImportPreviewResponse[totalRows=1, validRows=1, invalidRows=0, errors=[] (truncated)...]
+2026-05-27T00:18:38.820+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.importexport.web.AdminImportExportController#createImportTask(ImportCsvRequest)
+2026-05-27T00:18:38.821+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:38.821+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:38.821+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:38.821+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:38.822+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ImportCsvRequest[fileName=tools.csv, csvContent=name,summary,description,url,usageGuide,tags<EOL>Importe (truncated)...]
+2026-05-27T00:18:38.823+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:38.823+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, name, description, deleted, created_at, updated_at
+FROM tags
+WHERE LOWER(name) = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:38.823+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:38.823+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, name, description, deleted, created_at, updated_at
+FROM tags
+WHERE LOWER(name) = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:38.825+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:38.826+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, name, description, deleted, created_at, updated_at
+FROM tags
+WHERE deleted = FALSE
+  AND id IN (?)
+ORDER BY name ASC, id ASC
+]
+2026-05-27T00:18:38.827+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:38.827+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT t.id,
+       t.name,
+       t.summary,
+       t.description,
+       t.url,
+       t.usage_guide,
+       t.recommender_id,
+       u.real_name AS recommender_name,
+       t.status,
+       t.star_count,
+       t.favorite_count,
+       t.comment_count,
+       t.deleted,
+       t.created_at,
+       t.updated_at
+FROM tools t
+JOIN users u ON u.id = t.recommender_id
+WHERE t.deleted = FALSE
+  AND t.status <> 'REJECTED'
+  AND (
+    LOWER(t.name) = ?
+ OR LOWER(t.url) = ?)]
+2026-05-27T00:18:38.832+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2026-05-27T00:18:38.832+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement
+2026-05-27T00:18:38.834+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:38.834+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [DELETE FROM tool_tags WHERE tool_id = ?]
+2026-05-27T00:18:38.835+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:38.835+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO tool_tags (tool_id, tag_id)
+VALUES (?, ?)
+]
+2026-05-27T00:18:38.836+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:38.836+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO audit_logs (action, object_type, object_id, operator_id, operator_name, detail)
+VALUES (?, ?, ?, ?, ?, ?)
+]
+2026-05-27T00:18:38.836+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:38.836+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT t.id,
+       t.name,
+       t.summary,
+       t.description,
+       t.url,
+       t.usage_guide,
+       t.recommender_id,
+       u.real_name AS recommender_name,
+       t.status,
+       t.star_count,
+       t.favorite_count,
+       t.comment_count,
+       t.deleted,
+       t.created_at,
+       t.updated_at
+FROM tools t
+JOIN users u ON u.id = t.recommender_id
+WHERE t.id = ?
+  AND t.deleted = FALSE
+]
+2026-05-27T00:18:38.838+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:38.838+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ts.id,
+       ts.tool_id,
+       ts.submitter_id,
+       u.real_name AS submitter_name,
+       ts.status,
+       ts.remark,
+       ts.deleted,
+       ts.created_at,
+       ts.updated_at
+FROM tool_submissions ts
+JOIN users u ON u.id = ts.submitter_id
+WHERE ts.tool_id = ?
+  AND ts.deleted = FALSE
+ORDER BY ts.created_at DESC, ts.id DESC
+LIMIT 1
+]
+2026-05-27T00:18:38.841+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:38.841+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT tt.tool_id, t.id, t.name, t.description, t.deleted, t.created_at, t.updated_at
+FROM tool_tags tt
+JOIN tags t ON t.id = tt.tag_id
+WHERE tt.tool_id IN (?)
+  AND t.deleted = FALSE
+ORDER BY tt.tool_id ASC, t.name ASC, t.id ASC
+]
+2026-05-27T00:18:38.846+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2026-05-27T00:18:38.847+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement
+2026-05-27T00:18:38.847+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT id, task_name, file_path, file_name, status, requester_id, success_count, failure_count, error_report_path, detail, deleted, created_at, updated_at
+FROM import_tasks
+WHERE deleted = FALSE
+ORDER BY created_at DESC, id DESC
+]
+2026-05-27T00:18:38.849+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:38.849+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO audit_logs (action, object_type, object_id, operator_id, operator_name, detail)
+VALUES (?, ?, ?, ?, ?, ?)
+]
+2026-05-27T00:18:38.850+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:38.856+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=ImportTaskResponse[id=1, taskName=工具批量导入, fileName=tools.csv, status=COM (truncated)...]
+2026-05-27T00:18:38.861+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT COUNT(*) FROM tools WHERE name = 'Imported Tool']
+2026-05-27T00:18:38.862+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.importexport.web.AdminImportExportController#createExportTask(ExportTaskCreateRequest)
+2026-05-27T00:18:38.862+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:38.862+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:38.863+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:38.863+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:38.867+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ExportTaskCreateRequest[fields=[name, url, tags]]]
+2026-05-27T00:18:38.872+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:38.873+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT t.id,
+       t.name,
+       t.summary,
+       t.description,
+       t.url,
+       t.usage_guide,
+       t.recommender_id,
+       u.real_name AS recommender_name,
+       t.status,
+       t.star_count,
+       t.favorite_count,
+       t.comment_count,
+       t.deleted,
+       t.created_at,
+       t.updated_at
+FROM tools t
+JOIN users u ON u.id = t.recommender_id
+WHERE t.deleted = FALSE
+ ORDER BY t.created_at DESC, t.id DESC]
+2026-05-27T00:18:38.874+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:38.874+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT tt.tool_id, t.id, t.name, t.description, t.deleted, t.created_at, t.updated_at
+FROM tool_tags tt
+JOIN tags t ON t.id = tt.tag_id
+WHERE tt.tool_id IN (?,?)
+  AND t.deleted = FALSE
+ORDER BY tt.tool_id ASC, t.name ASC, t.id ASC
+]
+2026-05-27T00:18:38.877+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2026-05-27T00:18:38.877+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement
+2026-05-27T00:18:38.878+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT id, task_name, file_path, file_name, status, requester_id, success_count, failure_count, error_report_path, detail, deleted, created_at, updated_at
+FROM export_tasks
+WHERE deleted = FALSE
+ORDER BY created_at DESC, id DESC
+]
+2026-05-27T00:18:38.879+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:38.879+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO audit_logs (action, object_type, object_id, operator_id, operator_name, detail)
+VALUES (?, ?, ?, ?, ?, ?)
+]
+2026-05-27T00:18:38.880+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:38.890+08:00 DEBUG 56753 --- [tool-share-backend] [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResponse[status=ok, data=ExportTaskResponse[id=1, taskName=工具批量导出, fileName=tool-export-202605270 (truncated)...]
+]]></system-out>
+  </testcase>
+  <testcase name="nonAdminShouldNotAccessImportExportApis" classname="com.toolshare.importexport.web.ImportExportControllerTests" time="0.116">
+    <system-out><![CDATA[2026-05-27T00:18:38.899+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT id FROM roles WHERE code = 'USER']
+2026-05-27T00:18:39.003+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:39.003+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO users (username, email, password_hash, real_name, nickname, status, user_code, created_by, updated_by)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+]
+2026-05-27T00:18:39.004+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:39.004+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id FROM users WHERE username = ?]
+2026-05-27T00:18:39.004+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-05-27T00:18:39.004+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO user_roles (user_id, role_id) VALUES (?, ?)]
+2026-05-27T00:18:39.006+08:00 DEBUG 56753 --- [tool-share-backend] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.toolshare.importexport.web.AdminImportExportController#downloadTemplate()
+2026-05-27T00:18:39.006+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:39.006+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, user_code, username, email, real_name, nickname, status, password_hash, login_fail_count, last_login_at, login_locked_until, deleted, created_at, updated_at
+FROM users
+WHERE id = ?
+  AND deleted = FALSE
+]
+2026-05-27T00:18:39.007+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-05-27T00:18:39.007+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT ur.user_id, ur.role_id, r.code AS role_code, r.name AS role_name
+FROM user_roles ur
+JOIN roles r ON r.id = ur.role_id
+WHERE ur.user_id IN (?)
+  AND r.deleted = FALSE
+ORDER BY ur.user_id, ur.role_id
+]
+2026-05-27T00:18:39.008+08:00 DEBUG 56753 --- [tool-share-backend] [           main] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.toolshare.config.GlobalExceptionHandler#handleForbidden(ForbiddenException, HttpServletRequest)
+2026-05-27T00:18:39.008+08:00  WARN 56753 --- [tool-share-backend] [           main] c.t.config.GlobalExceptionHandler        : forbidden request: method=GET, path=/api/admin/import-export/template, user=import-user#8, 当前账号无权访问该管理资源
+2026-05-27T00:18:39.009+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-27T00:18:39.009+08:00 DEBUG 56753 --- [tool-share-backend] [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiResponse[status=error, data=null, message=当前账号无权访问该管理资源]]
+2026-05-27T00:18:39.009+08:00 DEBUG 56753 --- [tool-share-backend] [           main] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.toolshare.exception.ForbiddenException: 当前账号无权访问该管理资源]
+]]></system-out>
+  </testcase>
+</testsuite>
