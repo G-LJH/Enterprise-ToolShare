@@ -50,6 +50,7 @@ com\toolshare\review\web\ToolReviewResponse.class
 com\toolshare\security\CurrentUser.class
 com\toolshare\model\ApiResponse.class
 com\toolshare\tool\web\ToolListItemResponse$TagSnapshot.class
+com\toolshare\tool\service\ToolManagementService$SubmissionTransition.class
 com\toolshare\importexport\model\ImportTaskRecord.class
 com\toolshare\config\AuthenticationInterceptor.class
 com\toolshare\importexport\web\FileDownloadResponse.class

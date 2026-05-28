@@ -52,6 +52,9 @@ public class ToolStatusPolicy {
 
     public boolean canReadDetail(String status, boolean ownerOrAdmin) {
         String normalized = normalize(status);
+        if (OFFLINE.equals(normalized)) {
+            return false;
+        }
         return APPROVED.equals(normalized) || ownerOrAdmin;
     }
 }

@@ -139,7 +139,7 @@ export default function ToolsPage() {
       title: '摘要',
       dataIndex: 'summary',
       key: 'summary',
-      render: (value?: string | null, record) => (
+      render: (value: string | null | undefined, record) => (
         <div>
           <div style={{ color: 'rgba(0,0,0,0.85)', marginBottom: 6, lineHeight: 1.6 }}>
             {value || '暂无摘要'}
@@ -301,6 +301,16 @@ export default function ToolsPage() {
                           ))}
                         </Space>
                         <Text type="secondary">{tool.summary || tool.description.slice(0, 48)}</Text>
+                        {tool.status === 'REJECTED' ? (
+                          <Space>
+                            <Button size="small" type="link" style={{ paddingInline: 0 }}>
+                              <Link href={`/tools/submit?toolId=${tool.id}`}>修改后重提</Link>
+                            </Button>
+                            <Button size="small" type="link" danger style={{ paddingInline: 0 }}>
+                              <Link href={`/tools/${tool.id}`}>去删除</Link>
+                            </Button>
+                          </Space>
+                        ) : null}
                       </Space>
                     </Card>
                   ))}

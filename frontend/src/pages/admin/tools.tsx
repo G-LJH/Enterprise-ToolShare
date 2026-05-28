@@ -228,7 +228,7 @@ export default function AdminToolsPage() {
       title: '摘要',
       dataIndex: 'summary',
       key: 'summary',
-      render: (value?: string | null, record) => (
+      render: (value: string | null | undefined, record) => (
         <div>
           <div style={{ color: 'rgba(0,0,0,0.85)', marginBottom: 6, lineHeight: 1.6 }}>
             {value || '暂无摘要'}
@@ -339,8 +339,7 @@ export default function AdminToolsPage() {
                       { label: 'DRAFT', value: 'DRAFT' },
                       { label: 'PENDING_REVIEW', value: 'PENDING_REVIEW' },
                       { label: 'APPROVED', value: 'APPROVED' },
-                      { label: 'REJECTED', value: 'REJECTED' },
-                      { label: 'OFFLINE', value: 'OFFLINE' }
+                      { label: 'REJECTED', value: 'REJECTED' }
                     ]}
                   />
                 </Col>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { App, Button, Card, Empty, Form, Input, Select, Space, Tabs, Tag, Typography } from 'antd';
@@ -29,6 +29,14 @@ type WorkflowSubmitFormValues = {
 
 type ToolDetail = {
   id: number;
+  name: string;
+  summary?: string | null;
+  description: string;
+  url?: string | null;
+  usageGuide: string;
+  status: string;
+  recommenderId: number;
+  tags: { id: number; name: string }[];
 };
 
 type WorkflowDetail = {
@@ -47,6 +55,7 @@ export default function ToolSubmitPage() {
   const router = useRouter();
   const { message } = App.useApp();
   const requestedTab = typeof router.query.tab === 'string' ? router.query.tab : undefined;
+  const editingToolId = typeof router.query.toolId === 'string' ? router.query.toolId : undefined;
   const [currentUser, setCurrentUser] = useState<CurrentUser | null>(null);
   const [submittingTool, setSubmittingTool] = useState(false);
   const [submittingWorkflow, setSubmittingWorkflow] = useState(false);
@@ -54,8 +63,10 @@ export default function ToolSubmitPage() {
   const [tags, setTags] = useState<{ id: number; name: string }[]>([]);
   const [toolOptions, setToolOptions] = useState<ToolOption[]>([]);
   const [activeTab, setActiveTab] = useState<'tool' | 'workflow'>('tool');
+  const [editingTool, setEditingTool] = useState<ToolDetail | null>(null);
   const [toolForm] = Form.useForm<SubmitFormValues>();
   const [workflowForm] = Form.useForm<WorkflowSubmitFormValues>();
+  const isEditMode = useMemo(() => Boolean(editingToolId), [editingToolId]);
 
   useEffect(() => {
     if (!readAuthSession()) {
@@ -68,7 +79,24 @@ export default function ToolSubmitPage() {
         setCurrentUser(user);
         return Promise.all([
           apiRequest<{ id: number; name: string }[]>('/api/tags').then(setTags),
-          apiRequest<ToolOption[]>('/api/tools?sortBy=createdAt&sortOrder=desc').then(setToolOptions)
+          apiRequest<ToolOption[]>('/api/tools?sortBy=createdAt&sortOrder=desc').then(setToolOptions),
+          editingToolId
+            ? apiRequest<ToolDetail>(`/api/tools/${editingToolId}`).then((detail) => {
+              if (detail.recommenderId !== user.id || detail.status !== 'REJECTED') {
+                throw new Error('只有自己提交且已驳回的工具才能在这里修改重提');
+              }
+              setEditingTool(detail);
+              setActiveTab('tool');
+              toolForm.setFieldsValue({
+                name: detail.name,
+                summary: detail.summary || '',
+                description: detail.description,
+                url: detail.url || '',
+                usageGuide: detail.usageGuide,
+                tagIds: detail.tags.map((tag) => tag.id)
+              });
+            })
+            : Promise.resolve()
         ]);
       })
       .catch((error) => {
@@ -77,26 +105,30 @@ export default function ToolSubmitPage() {
         void router.replace('/login');
       })
       .finally(() => setBooting(false));
-  }, [message, router]);
+  }, [editingToolId, message, router, toolForm]);
 
   useEffect(() => {
+    if (editingToolId) {
+      setActiveTab('tool');
+      return;
+    }
     if (requestedTab === 'workflow' || requestedTab === 'tool') {
       setActiveTab(requestedTab);
     }
-  }, [requestedTab]);
+  }, [editingToolId, requestedTab]);
 
   const handleToolSubmit = async () => {
     const values = await toolForm.validateFields();
     setSubmittingTool(true);
     try {
-      const detail = await apiRequest<ToolDetail>('/api/tools/submissions', {
-        method: 'POST',
+      const detail = await apiRequest<ToolDetail>(editingToolId ? `/api/tools/${editingToolId}/resubmission` : '/api/tools/submissions', {
+        method: editingToolId ? 'PUT' : 'POST',
         body: JSON.stringify(values)
       });
-      message.success('工具已提交，等待审核');
+      message.success(editingToolId ? '工具已修改并重新提交' : '工具已提交');
       await router.push(`/tools/${detail.id}`);
     } catch (error) {
-      message.error(error instanceof Error ? error.message : '提交工具失败');
+      message.error(error instanceof Error ? error.message : editingToolId ? '重新提交工具失败' : '提交工具失败');
     } finally {
       setSubmittingTool(false);
     }
@@ -154,15 +186,15 @@ export default function ToolSubmitPage() {
       currentUser={currentUser}
       onLogout={handleLogout}
       title="提交内容"
-      subtitle="工具和工作流都从这里进入平台，减少来回切换"
+      subtitle={isEditMode ? '修改驳回工具并重新进入审核流程' : '工具和工作流都从这里进入平台，减少来回切换'}
       section="submit"
     >
       <Card bordered={false} className="page-hero" style={{ marginBottom: 24 }}>
         <Space direction="vertical" size={12}>
-          <Tag color="blue">New Entry</Tag>
-          <Title level={2} style={{ margin: 0 }}>补充工具，或者沉淀一套工作流</Title>
+          <Tag color="blue">{isEditMode ? 'Resubmit Tool' : 'New Entry'}</Tag>
+          <Title level={2} style={{ margin: 0 }}>{isEditMode ? '修改后重新提交工具' : '补充工具，或者沉淀一套工作流'}</Title>
           <Paragraph style={{ marginBottom: 0 }}>
-            工具适合单点能力沉淀，工作流适合把多个工具串成一套可复用的方法。
+            {isEditMode ? '驳回原因会保留在详情页，本次提交会生成新的审核记录。' : '工具适合单点能力沉淀，工作流适合把多个工具串成一套可复用的方法。'}
           </Paragraph>
         </Space>
       </Card>
@@ -174,7 +206,7 @@ export default function ToolSubmitPage() {
           items={[
             {
               key: 'tool',
-              label: '提交工具',
+              label: isEditMode ? '重新提交工具' : '提交工具',
               children: (
                 <Form
                   form={toolForm}
@@ -214,10 +246,10 @@ export default function ToolSubmitPage() {
                   </Form.Item>
                   <Space>
                     <Button type="primary" size="large" style={{ background: '#183153' }} loading={submittingTool} onClick={() => void handleToolSubmit()}>
-                      提交工具
+                      {isEditMode ? '保存并重新提交' : '提交工具'}
                     </Button>
                     <Button size="large">
-                      <Link href="/tools">返回工具列表</Link>
+                      <Link href={editingTool ? `/tools/${editingTool.id}` : '/tools'}>{isEditMode ? '返回工具详情' : '返回工具列表'}</Link>
                     </Button>
                   </Space>
                 </Form>
@@ -226,6 +258,7 @@ export default function ToolSubmitPage() {
             {
               key: 'workflow',
               label: '提交工作流',
+              disabled: isEditMode,
               children: toolOptions.length === 0 ? (
                 <Empty
                   description="当前还没有可关联的已发布工具，建议先提交工具后再创建工作流。"

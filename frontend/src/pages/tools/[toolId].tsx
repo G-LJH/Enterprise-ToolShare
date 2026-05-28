@@ -150,6 +150,13 @@ export default function ToolDetailPage() {
     await Promise.all([loadTool(toolId), loadComments(toolId)]);
   }, [loadComments, loadTool, toolId]);
 
+  const canResubmitOrDelete = Boolean(
+    tool &&
+    currentUser &&
+    tool.recommenderId === currentUser.id &&
+    tool.status === 'REJECTED'
+  );
+
   const handleToggleStar = async () => {
     if (!tool || !toolId || Array.isArray(toolId)) {
       return;
@@ -224,6 +231,24 @@ export default function ToolDetailPage() {
     }
   };
 
+  const handleDeleteRejectedTool = async () => {
+    if (!toolId || Array.isArray(toolId)) {
+      return;
+    }
+    setActionLoading(true);
+    try {
+      await apiRequest<void>(`/api/tools/${toolId}`, {
+        method: 'DELETE'
+      });
+      message.success('工具已删除');
+      await router.replace('/tools');
+    } catch (error) {
+      message.error(error instanceof Error ? error.message : '删除工具失败');
+    } finally {
+      setActionLoading(false);
+    }
+  };
+
   if (booting) {
     return <div style={{ minHeight: '100vh', display: 'grid', placeItems: 'center' }}><Text>正在加载工具详情...</Text></div>;
   }
@@ -278,6 +303,21 @@ export default function ToolDetailPage() {
                 <Button>
                   <Link href="/tools">返回列表</Link>
                 </Button>
+                {canResubmitOrDelete ? (
+                  <Button>
+                    <Link href={`/tools/submit?toolId=${tool.id}`}>修改后重新提交</Link>
+                  </Button>
+                ) : null}
+                {canResubmitOrDelete ? (
+                  <Popconfirm
+                    title="确认删除这个已驳回的工具？"
+                    okText="删除"
+                    cancelText="取消"
+                    onConfirm={() => void handleDeleteRejectedTool()}
+                  >
+                    <Button danger loading={actionLoading}>删除该工具</Button>
+                  </Popconfirm>
+                ) : null}
               </Space>
             </Space>
           </Card>
@@ -369,6 +409,11 @@ export default function ToolDetailPage() {
                 <Descriptions.Item label="备注">{tool.submission.remark}</Descriptions.Item>
                 <Descriptions.Item label="提交时间">{new Date(tool.submission.createdAt).toLocaleString('zh-CN')}</Descriptions.Item>
               </Descriptions>
+              {canResubmitOrDelete ? (
+                <Text type="secondary" style={{ display: 'block', marginTop: 16 }}>
+                  驳回后可以修改内容重新提交，或直接删除该工具。
+                </Text>
+              ) : null}
             </Card>
           ) : null}
     </EnterpriseShell>

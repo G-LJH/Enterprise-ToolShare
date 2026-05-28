@@ -5,9 +5,11 @@ import com.toolshare.security.CurrentUserHolder;
 import com.toolshare.security.RequireAuthenticated;
 import com.toolshare.tool.service.ToolManagementService;
 import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -49,5 +51,17 @@ public class ToolController {
     @PostMapping("/submissions")
     public ApiResponse<ToolDetailResponse> submitTool(@Valid @RequestBody ToolUpsertRequest request) {
         return ApiResponse.ok(toolManagementService.submitTool(request, CurrentUserHolder.get()));
+    }
+
+    @PutMapping("/{toolId}/resubmission")
+    public ApiResponse<ToolDetailResponse> resubmitTool(@PathVariable Long toolId,
+                                                        @Valid @RequestBody ToolUpsertRequest request) {
+        return ApiResponse.ok(toolManagementService.resubmitRejectedTool(toolId, request, CurrentUserHolder.get()));
+    }
+
+    @DeleteMapping("/{toolId}")
+    public ApiResponse<Void> deleteTool(@PathVariable Long toolId) {
+        toolManagementService.deleteRejectedToolByOwner(toolId, CurrentUserHolder.get());
+        return ApiResponse.ok(null);
     }
 }

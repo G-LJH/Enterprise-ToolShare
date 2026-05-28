@@ -85,7 +85,9 @@ public class ToolManagementService {
     public List<ToolListItemResponse> listAdminTools(String keyword, String status, List<Long> tagIds, String sortBy, String sortOrder) {
         ToolSearchPolicy.ToolSearchQuery query = toolSearchPolicy.normalize(keyword, tagIds, sortBy, sortOrder);
         List<ToolRecord> tools = toolRepository.searchForAdmin(query.keyword(), status, query.tagIds(), query.sortBy(), query.sortOrder());
-        return toListResponses(tools);
+        return toListResponses(tools).stream()
+                .filter(tool -> !ToolStatusPolicy.OFFLINE.equals(tool.status()))
+                .toList();
     }
 
     public List<ToolListItemResponse> listUserVisibleTools(String keyword,
@@ -97,7 +99,9 @@ public class ToolManagementService {
                                                            CurrentUser currentUser) {
         ToolSearchPolicy.ToolSearchQuery query = toolSearchPolicy.normalize(keyword, tagIds, sortBy, sortOrder);
         if (mine) {
-            return toListResponses(toolRepository.searchByRecommender(currentUser.id(), status, query.tagIds(), query.sortBy(), query.sortOrder()));
+            return toListResponses(toolRepository.searchByRecommender(currentUser.id(), status, query.tagIds(), query.sortBy(), query.sortOrder())).stream()
+                    .filter(tool -> !ToolStatusPolicy.OFFLINE.equals(tool.status()))
+                    .toList();
         }
         return toListResponses(toolRepository.searchVisibleTools(query.keyword(), query.tagIds(), query.sortBy(), query.sortOrder())).stream()
                 .filter(tool -> toolStatusPolicy.canReadInPublicList(tool.status()))
@@ -118,7 +122,9 @@ public class ToolManagementService {
     }
 
     public List<ToolListItemResponse> listFavoriteTools(CurrentUser currentUser) {
-        return toListResponses(toolRepository.findByIds(toolEngagementService.listFavoriteToolIds(currentUser.id())));
+        return toListResponses(toolRepository.findByIds(toolEngagementService.listFavoriteToolIds(currentUser.id()))).stream()
+                .filter(tool -> toolStatusPolicy.canReadInPublicList(tool.status()))
+                .toList();
     }
 
     @Transactional
@@ -181,10 +187,7 @@ public class ToolManagementService {
         ValidatedToolInput input = validateInput(request);
         List<TagRecord> tags = tagManagementService.validateTagIds(request.tagIds());
         ensureNoDuplicate(input.nameLower(), input.urlLower(), null);
-        boolean reviewEnabled = systemConfigService.isToolReviewEnabled();
-        String toolStatus = reviewEnabled ? toolStatusPolicy.initialSubmissionStatus() : ToolStatusPolicy.APPROVED;
-        String submissionStatus = reviewEnabled ? SubmissionStatusPolicy.PENDING : SubmissionStatusPolicy.APPROVED;
-        String submissionRemark = reviewEnabled ? "等待管理员审核" : "审核开关关闭，系统自动通过";
+        SubmissionTransition transition = buildSubmissionTransition();
         long toolId = toolRepository.insert(
                 input.name(),
                 input.summary(),
@@ -192,18 +195,61 @@ public class ToolManagementService {
                 input.url(),
                 input.usageGuide(),
                 operator.id(),
-                toolStatus,
+                transition.toolStatus(),
                 operator.id()
         );
         toolTagRepository.replaceToolTags(toolId, tags.stream().map(TagRecord::id).toList());
-        toolSubmissionRepository.insert(toolId, operator.id(), submissionStatus, submissionRemark, operator.id());
+        toolSubmissionRepository.insert(toolId, operator.id(), transition.submissionStatus(), transition.remark(), operator.id());
         auditLogRepository.insert(new AuditLogEntry(
                 "TOOL_SUBMITTED",
                 "TOOL",
                 String.valueOf(toolId),
                 operator.id(),
                 operator.username(),
-                "submitted tool " + input.name() + ", reviewEnabled=" + reviewEnabled
+                "submitted tool " + input.name() + ", reviewEnabled=" + transition.reviewEnabled()
+        ));
+        return getToolDetailForUser(toolId, operator);
+    }
+
+    @Transactional
+    public ToolDetailResponse resubmitRejectedTool(Long toolId, ToolUpsertRequest request, CurrentUser operator) {
+        ToolRecord existing = getToolOrThrow(toolId);
+        assertOwner(existing, operator);
+        if (!ToolStatusPolicy.REJECTED.equals(existing.status())) {
+            throw new BadRequestException("只有已驳回的工具才能修改后重新提交");
+        }
+        ToolSubmissionRecord latestSubmission = toolSubmissionRepository.findLatestByToolId(toolId)
+                .orElseThrow(() -> new NotFoundException("提交记录不存在"));
+        if (!SubmissionStatusPolicy.REJECTED.equals(latestSubmission.status())) {
+            throw new BadRequestException("当前工具没有可重新提交的驳回记录");
+        }
+
+        ValidatedToolInput input = validateInput(request);
+        List<TagRecord> tags = tagManagementService.validateTagIds(request.tagIds());
+        ensureNoDuplicate(input.nameLower(), input.urlLower(), toolId);
+
+        toolRepository.updateTool(
+                toolId,
+                input.name(),
+                input.summary(),
+                input.description(),
+                input.url(),
+                input.usageGuide(),
+                operator.id()
+        );
+        toolTagRepository.replaceToolTags(toolId, tags.stream().map(TagRecord::id).toList());
+
+        SubmissionTransition transition = buildSubmissionTransition();
+        toolRepository.updateStatus(toolId, transition.toolStatus(), operator.id());
+        toolSubmissionRepository.insert(toolId, operator.id(), transition.submissionStatus(), transition.remark(), operator.id());
+
+        auditLogRepository.insert(new AuditLogEntry(
+                "TOOL_RESUBMITTED",
+                "TOOL",
+                String.valueOf(toolId),
+                operator.id(),
+                operator.username(),
+                "resubmitted rejected tool " + input.name() + ", reviewEnabled=" + transition.reviewEnabled()
         ));
         return getToolDetailForUser(toolId, operator);
     }
@@ -211,6 +257,26 @@ public class ToolManagementService {
     @Transactional
     public void deleteTool(Long toolId, CurrentUser operator) {
         ToolRecord existing = getToolOrThrow(toolId);
+        deleteToolInternal(existing, operator);
+    }
+
+    @Transactional
+    public void deleteRejectedToolByOwner(Long toolId, CurrentUser operator) {
+        ToolRecord existing = getToolOrThrow(toolId);
+        assertOwner(existing, operator);
+        if (!ToolStatusPolicy.REJECTED.equals(existing.status())) {
+            throw new BadRequestException("只有已驳回的工具才允许提交者删除");
+        }
+        ToolSubmissionRecord latestSubmission = toolSubmissionRepository.findLatestByToolId(toolId)
+                .orElseThrow(() -> new NotFoundException("提交记录不存在"));
+        if (!SubmissionStatusPolicy.REJECTED.equals(latestSubmission.status())) {
+            throw new BadRequestException("当前工具没有可删除的驳回记录");
+        }
+        deleteToolInternal(existing, operator);
+    }
+
+    private void deleteToolInternal(ToolRecord existing, CurrentUser operator) {
+        Long toolId = existing.id();
         if (workflowToolRepository.existsByToolId(toolId)) {
             throw new ConflictException("该工具已被工作流引用，无法删除，请先调整相关工作流");
         }
@@ -233,6 +299,12 @@ public class ToolManagementService {
     private ToolRecord getToolOrThrow(Long toolId) {
         return toolRepository.findActiveById(toolId)
                 .orElseThrow(() -> new NotFoundException("工具不存在"));
+    }
+
+    private void assertOwner(ToolRecord tool, CurrentUser operator) {
+        if (!tool.recommenderId().equals(operator.id())) {
+            throw new ConflictException("只能操作自己提交的工具");
+        }
     }
 
     private ToolDetailResponse buildToolDetail(ToolRecord tool, CurrentUser currentUser) {
@@ -302,6 +374,16 @@ public class ToolManagementService {
                 .toList();
     }
 
+    private SubmissionTransition buildSubmissionTransition() {
+        boolean reviewEnabled = systemConfigService.isToolReviewEnabled();
+        return new SubmissionTransition(
+                reviewEnabled,
+                reviewEnabled ? toolStatusPolicy.initialSubmissionStatus() : ToolStatusPolicy.APPROVED,
+                reviewEnabled ? SubmissionStatusPolicy.PENDING : SubmissionStatusPolicy.APPROVED,
+                reviewEnabled ? "等待管理员审核" : "审核开关关闭，系统自动通过"
+        );
+    }
+
     private record ValidatedToolInput(
             String name,
             String summary,
@@ -316,5 +398,13 @@ public class ToolManagementService {
         String urlLower() {
             return url == null ? null : url.toLowerCase();
         }
+    }
+
+    private record SubmissionTransition(
+            boolean reviewEnabled,
+            String toolStatus,
+            String submissionStatus,
+            String remark
+    ) {
     }
 }
