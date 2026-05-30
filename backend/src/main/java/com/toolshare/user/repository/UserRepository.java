@@ -10,6 +10,7 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
+import java.sql.Types;
 import java.sql.Statement;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -94,8 +95,8 @@ public class UserRepository {
             statement.setString(4, realName);
             statement.setString(5, nickname);
             statement.setString(6, status);
-            statement.setLong(7, operatorId);
-            statement.setLong(8, operatorId);
+            statement.setObject(7, operatorId, Types.BIGINT);
+            statement.setObject(8, operatorId, Types.BIGINT);
             return statement;
         }, keyHolder);
         return keyHolder.getKey().longValue();

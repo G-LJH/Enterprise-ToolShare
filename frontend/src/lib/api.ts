@@ -1,6 +1,8 @@
 import { clearAuthSession, getAccessToken } from './auth';
 
-export const BACKEND_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL ?? 'http://localhost:8080';
+const configuredBackendBaseUrl = process.env.NEXT_PUBLIC_BACKEND_BASE_URL?.trim() ?? '';
+
+export const BACKEND_BASE_URL = configuredBackendBaseUrl.replace(/\/+$/, '');
 
 type RequestOptions = RequestInit & {
   skipAuth?: boolean;

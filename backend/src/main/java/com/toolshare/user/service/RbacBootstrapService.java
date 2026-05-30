@@ -58,6 +58,7 @@ public class RbacBootstrapService implements ApplicationRunner {
                     "ACTIVE",
                     null
             );
+            operatorId = adminId;
         } else {
             adminId = existingAdmin.get().id();
             operatorId = adminId;

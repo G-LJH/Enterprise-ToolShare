@@ -1,0 +1,58 @@
+[
+  {
+    "name": "01-login",
+    "title": "登录页面",
+    "url": "/login",
+    "auth": false,
+    "file": "F:\\tool share\\产品说明\\screenshots\\01-login.png"
+  },
+  {
+    "name": "02-tools",
+    "title": "工具目录",
+    "url": "/tools",
+    "auth": true,
+    "file": "F:\\tool share\\产品说明\\screenshots\\02-tools.png"
+  },
+  {
+    "name": "03-submit",
+    "title": "提交工具",
+    "url": "/tools/submit",
+    "auth": true,
+    "file": "F:\\tool share\\产品说明\\screenshots\\03-submit.png"
+  },
+  {
+    "name": "04-workflows",
+    "title": "工作流",
+    "url": "/workflows",
+    "auth": true,
+    "file": "F:\\tool share\\产品说明\\screenshots\\04-workflows.png"
+  },
+  {
+    "name": "05-reviews",
+    "title": "审核中心",
+    "url": "/admin/reviews",
+    "auth": true,
+    "file": "F:\\tool share\\产品说明\\screenshots\\05-reviews.png"
+  },
+  {
+    "name": "06-users",
+    "title": "账号权限",
+    "url": "/admin/users",
+    "auth": true,
+    "file": "F:\\tool share\\产品说明\\screenshots\\06-users.png"
+  },
+  {
+    "name": "07-import-export",
+    "title": "导入导出",
+    "url": "/admin/import-export",
+    "auth": true,
+    "file": "F:\\tool share\\产品说明\\screenshots\\07-import-export.png"
+  },
+  {
+    "name": "08-logs",
+    "title": "日志审计",
+    "url": "/admin/logs",
+    "auth": true,
+    "file": "F:\\tool share\\产品说明\\screenshots\\08-logs.png"
+  }
+]
